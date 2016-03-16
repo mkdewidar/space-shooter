@@ -62,10 +62,4 @@ protected:
 	angle must be in eular angles
 	*/
 	void RotateVertices(double angle);
-
-	/*
-	Moves the shape in the forward direction by the scale provided
-	@param scale the scalar value by which to move in the forward direction
-	*/
-	void OffsetForward(double scale);
 };

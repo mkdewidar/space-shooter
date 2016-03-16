@@ -28,6 +28,11 @@ Scene::Scene()
 	{
 		this->gameObjects.push_back(new Asteroid(center, vertices2, 6));
 	}
+
+	for (size_t index = 0; index < gameObjects.size(); index++)
+	{
+		gameObjects[index]->handle = index;
+	}
 }
 
 
@@ -44,7 +49,7 @@ Scene::~Scene()
 
 void Scene::RunScene()
 {
-	while (this->currentSceneState != QUIT)
+	while (this->currentSceneState != SceneState::QUIT)
 	{
 		double deltaTime = this->time.GetDeltaTime() / 1000.0;
 		this->time.ResetTime();
@@ -55,16 +60,16 @@ void Scene::RunScene()
 			{
 				if (this->e.key.keysym.sym == SDLK_ESCAPE)
 				{
-					this->currentSceneState = QUIT;
+					this->currentSceneState = SceneState::QUIT;
 					break;
 				}
 			}
 		}
 
-
-		for (GameObject* object : this->gameObjects)
+		// can't use range based for as bullets may be added to vector while looping
+		for (size_t objectIndex = 0; objectIndex < gameObjects.size(); objectIndex++)
 		{
-			object->Update(deltaTime, gameObjects, this->window);
+			gameObjects[objectIndex]->Update(deltaTime, gameObjects, this->window);
 		}
 
 
@@ -75,11 +80,14 @@ void Scene::RunScene()
 
 
 		SDL_SetRenderDrawColor(this->renderer, this->drawColor.r, this->drawColor.g, this->drawColor.b, this->drawColor.a);
-		for (GameObject* object : gameObjects)
+		for (size_t objectIndex = 0; objectIndex < gameObjects.size(); objectIndex++)
 		{
 			// front is called to get the pointer to the first element from the vector
-			SDL_RenderDrawLines(this->renderer, &object->GetDrawableCoords().front(), object->GetDrawableCoords().size());
-			SDL_RenderDrawPoint(this->renderer, (int)object->center.x, (int)object->center.y);
+			SDL_RenderDrawLines(this->renderer, &gameObjects[objectIndex]->GetDrawableCoords().front(), 
+				gameObjects[objectIndex]->GetDrawableCoords().size());
+
+			// used to draw the center, not necessary
+			SDL_RenderDrawPoint(this->renderer, (int)gameObjects[objectIndex]->center.x, (int)gameObjects[objectIndex]->center.y);
 		}
 
 		// push to screen

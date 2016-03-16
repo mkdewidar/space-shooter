@@ -6,10 +6,6 @@
 GameObject::GameObject(Vector2D center, Vector2D* vertices, int noOfVertices)
 	: VectorShape(center, vertices, noOfVertices)
 {
-	// in the future might make this calculate it's own proximity.
-	this->proximity = 100;
-
-	this->rotateAmount = 200;
 }
 
 
@@ -19,24 +15,44 @@ GameObject::~GameObject()
 
 void GameObject::Update(double dTime, vector<GameObject*>& gameObjects, SDL_Window*& window)
 {
+	this->currentVel = (this->currentVel < this->minVel) ? this->minVel : this->currentVel;
+	this->currentVel = (this->currentVel > this->maxVel) ? this->maxVel : this->currentVel;
+
+	this->center = this->center + (this->movementVector * dTime);
+
+	
 	// Allows all objects to wrap around the screen,
 	// currently based on center which means the bigger the object the more
 	// awkward it is, should probably implement some sort of 
-
+	
 	int winWidth, winHeight;
 	SDL_GetWindowSize(window, &winWidth, &winHeight);
 
-	this->center.x = (this->center.x > winWidth) ?
-		0 : this->center.x;
-	this->center.x = (this->center.x < 0) ?
-		winWidth : this->center.x;
+	switch (this->tag)
+	{
+	case ObjectTags::BULLET:
+	{
+		if ((this->center.x > winWidth)
+			|| (this->center.x < 0)
+			|| (this->center.y > winHeight)
+			|| (this->center.y < 0))
+		{
+			gameObjects.erase(gameObjects.begin()+this->handle);
+			delete this;
+		}
+		break;
+	}
+	case ObjectTags::ASTEROID:
+	case ObjectTags::PLAYER:
+	{
+		this->center.x = (this->center.x > winWidth) ? 0 : this->center.x;
+		this->center.x = (this->center.x < 0) ? winWidth : this->center.x;
 
-
-	this->center.y = (this->center.y > winHeight) ?
-		0 : this->center.y;
-	this->center.y = (this->center.y < 0) ?
-		winHeight : this->center.y;
-
+		this->center.y = (this->center.y > winHeight) ? 0: this->center.y;
+		this->center.y = (this->center.y < 0) ? winHeight : this->center.y;
+		break;
+	}
+	}
 }
 
 int GameObject::GetProximity()

@@ -1,11 +1,12 @@
 #include "VectorShape.h"
 #include "Vector2D.h"
 
+
 VectorShape::VectorShape(Vector2D center, Vector2D* vertices, int noOfVertices)
 {
 	this->center = center;
 
-	for (int vertexIndex = 0; vertexIndex < noOfVertices; vertexIndex++)
+	for (size_t vertexIndex = 0; vertexIndex < (size_t)noOfVertices; vertexIndex++)
 	{
 		this->vertices.push_back(vertices[vertexIndex]);
 	}
@@ -77,11 +78,6 @@ vector<Vector2D> VectorShape::GetVectorEdges()
 	return edges;
 }
 
-void VectorShape::OffsetForward(double scale)
-{
-	this->center = this->center + (this->forwardDirection.GetUnitVector() * scale);
-}
-
 void VectorShape::RotateVertices(double angle)
 {
 	double angleR = (angle * M_PI) / 180;
@@ -95,7 +91,6 @@ void VectorShape::RotateVertices(double angle)
 		this->vertices[vertexCounter].y = (oldCoords.x * sin(angleR)) + (oldCoords.y * cos(angleR));
 	}
 
-	// TODO: Create a matrix class to stop copy pasting all this
 	Vector2D oldCoords = this->forwardDirection;
 
 	this->forwardDirection.x = (oldCoords.x * cos(angleR)) - (oldCoords.y * sin(angleR));

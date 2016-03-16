@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Asteroid">
-    <Position X="1.75" Y="4.25" Width="1.5" />
+    <Position X="1.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQIAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Asteroid.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameObject">
     <Position X="4" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ADQAAAAABAAAAAAAAAAAAAAAAEAAAAAAAAAAAAIEAAA=</HashCode>
+      <HashCode>ADQIAAAAZAAAAAAgAAAAAAAAAEAAAAAAAAAAAAIEAAA=</HashCode>
       <FileName>GameObject.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Player">
-    <Position X="4" Y="4.25" Width="1.5" />
+    <Position X="4" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAYAAAAAAgAAAAAAAAAAAAAAAAAAAAAQIAABA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABA=</HashCode>
       <FileName>Player.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="VectorShape">
     <Position X="0.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAkAAAAAAAACAAAIABAAAABAAgAQAAAAAAAAAgAAQAA=</HashCode>
+      <HashCode>AAkAAAAAAAACAAAIAAAAAABAAgAQAAAAAAAAAgAAQAA=</HashCode>
       <FileName>VectorShape.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -50,7 +50,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Bullet">
-    <Position X="6.25" Y="4.25" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAQAAA=</HashCode>
       <FileName>Bullet.h</FileName>

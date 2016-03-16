@@ -27,8 +27,10 @@ class Scene
 {
 public:
 
+	static int NoOfGameObjects = 0;
+
 	// keeps track of the current scene
-	SceneState currentSceneState = GAMESCENE;
+	SceneState currentSceneState = SceneState::GAMESCENE;
 
 	// pointer to the SDL window
 	SDL_Window* window = NULL;
