@@ -158,9 +158,16 @@
   <ItemGroup>
     <ClCompile Include="Asteroid.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="LogicManager.cpp" />
+    <ClCompile Include="MessageBus.cpp" />
+    <ClCompile Include="Messages.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="Physics.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="System.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="VectorShape.cpp" />
     <ClCompile Include="main.cpp" />
@@ -169,9 +176,16 @@
   <ItemGroup>
     <ClInclude Include="Asteroid.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="LogicManager.h" />
+    <ClInclude Include="MessageBus.h" />
+    <ClInclude Include="Messages.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="Physics.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="System.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="VectorShape.h" />
     <ClInclude Include="Vector2D.h" />

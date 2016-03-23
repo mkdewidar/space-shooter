@@ -1,12 +1,12 @@
-#include "Scene.h"
+#include "Engine.h"
 
 
 
 int main(int argc, char* arg[])
 {
-	Scene gameScene;
+	Engine game;
 
-	gameScene.RunScene();
+	game.RunScene();
 
 	return 0;
 }

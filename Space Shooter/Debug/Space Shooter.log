@@ -1,4 +1,120 @@
-﻿  Scene.cpp
-  Player.cpp
+﻿  main.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\main.cpp(1): fatal error C1083: Cannot open include file: 'Scene.h': No such file or directory
+  System.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(20): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(33): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(46): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(59): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+  Renderer.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(20): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(33): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(46): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(59): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+  Physics.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(20): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(33): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(46): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(59): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+  ObjectManager.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(20): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(33): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(46): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(59): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\objectmanager.cpp(37): error C2374: 'center': redefinition; multiple initialization
+  c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\objectmanager.cpp(33): note: see declaration of 'center'
+  Messages.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(23): error C2061: syntax error: identifier 'Msg'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\system.h(28): error C2061: syntax error: identifier 'Msg'
+  MessageBus.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\system.h(15): error C2061: syntax error: identifier 'MessageBus'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\system.h(28): error C2061: syntax error: identifier 'Msg'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\system.h(32): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\system.h(32): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\system.h(32): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.cpp(23): error C2660: 'System::HandleMessage': function does not take 1 arguments
+  LogicManager.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(20): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(33): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(46): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(59): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\logicmanager.cpp(18): error C2660: 'GameObject::Update': function does not take 1 arguments
+  Engine.cpp
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(20): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2143: syntax error: missing ';' before '*'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(24): error C2238: unexpected token(s) preceding ';'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(33): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(46): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messages.h(59): error C2061: syntax error: identifier 'System'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(16): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2065: 'System': undeclared identifier
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2059: syntax error: '>'
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\messagebus.h(26): error C2976: 'std::vector': too few template arguments
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vector(678): note: see declaration of 'std::vector'
   Generating Code...
-  Space Shooter.vcxproj -> C:\Users\mkdewidar\Documents\Visual Studio 2015\Projects\Space Shooter\Debug\Space Shooter.exe
