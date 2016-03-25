@@ -156,41 +156,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine\Source Files\GameState.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\GameState.cpp" />
     <ClCompile Include="Game\Source Files\Asteroid.cpp" />
     <ClCompile Include="Game\Source Files\Bullet.cpp" />
-    <ClCompile Include="Engine\Source Files\Engine.cpp" />
-    <ClCompile Include="Game\Source Files\GameObject.cpp" />
-    <ClCompile Include="Engine\Source Files\LogicManager.cpp" />
-    <ClCompile Include="Engine\Source Files\MessageBus.cpp" />
-    <ClCompile Include="Engine\Source Files\Messages.cpp" />
-    <ClCompile Include="Engine\Source Files\ObjectManager.cpp" />
-    <ClCompile Include="Engine\Source Files\Physics.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\Engine.cpp" />
+    <ClCompile Include="Engine\Source Files\GameObject.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\LogicManager.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\MessageBus.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\Messages.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\ObjectManager.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\Physics.cpp" />
     <ClCompile Include="Game\Source Files\Player.cpp" />
-    <ClCompile Include="Engine\Source Files\Renderer.cpp" />
-    <ClCompile Include="Engine\Source Files\System.cpp" />
-    <ClCompile Include="Engine\Source Files\TimeManager.cpp" />
-    <ClCompile Include="Game\Source Files\VectorShape.cpp" />
-    <ClCompile Include="Engine\Source Files\main.cpp" />
-    <ClCompile Include="Game\Source Files\Vector2D.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\Renderer.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\System.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\TimeManager.cpp" />
+    <ClCompile Include="Engine\Source Files\VectorShape.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\main.cpp" />
+    <ClCompile Include="Engine\Source Files\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Engine\Header Files\GameState.h" />
+    <ClInclude Include="Engine\Header Files\Systems\GameState.h" />
     <ClInclude Include="Game\Header Files\Asteroid.h" />
     <ClInclude Include="Game\Header Files\Bullet.h" />
-    <ClInclude Include="Engine\Header Files\Engine.h" />
-    <ClInclude Include="Game\Header Files\GameObject.h" />
-    <ClInclude Include="Engine\Header Files\LogicManager.h" />
-    <ClInclude Include="Engine\Header Files\MessageBus.h" />
-    <ClInclude Include="Engine\Header Files\Messages.h" />
-    <ClInclude Include="Engine\Header Files\ObjectManager.h" />
-    <ClInclude Include="Engine\Header Files\Physics.h" />
+    <ClInclude Include="Engine\Header Files\Systems\Engine.h" />
+    <ClInclude Include="Engine\Header Files\GameObject.h" />
+    <ClInclude Include="Engine\Header Files\Systems\LogicManager.h" />
+    <ClInclude Include="Engine\Header Files\Systems\MessageBus.h" />
+    <ClInclude Include="Engine\Header Files\Systems\Messages.h" />
+    <ClInclude Include="Engine\Header Files\Systems\ObjectManager.h" />
+    <ClInclude Include="Engine\Header Files\Systems\Physics.h" />
     <ClInclude Include="Game\Header Files\Player.h" />
-    <ClInclude Include="Engine\Header Files\Renderer.h" />
-    <ClInclude Include="Engine\Header Files\System.h" />
-    <ClInclude Include="Engine\Header Files\TimeManager.h" />
-    <ClInclude Include="Game\Header Files\VectorShape.h" />
-    <ClInclude Include="Game\Header Files\Vector2D.h" />
+    <ClInclude Include="Engine\Header Files\Systems\Renderer.h" />
+    <ClInclude Include="Engine\Header Files\Systems\System.h" />
+    <ClInclude Include="Engine\Header Files\Systems\TimeManager.h" />
+    <ClInclude Include="Engine\Header Files\VectorShape.h" />
+    <ClInclude Include="Engine\Header Files\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

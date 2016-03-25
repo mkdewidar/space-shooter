@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameObject.h"
+#include "../../Engine/Header Files/GameObject.h"
 
 /*
 Class defining a bullet
@@ -12,6 +12,6 @@ public:
 	Bullet(Vector2D center, Vector2D* vertices, int noOfVertices, Vector2D direction);
 	~Bullet();
 
-	void Update(double dTime, vector<GameObject*>& gameObjects, SDL_Window*& window) override;
+	void Update(double dTime) override;
 };
 

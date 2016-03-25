@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameObject.h"
+#include "../../Engine/Header Files/GameObject.h"
 
 
 
@@ -13,5 +13,5 @@ public:
 
 	~Asteroid();
 
-	virtual void Update(double dTime, vector<GameObject*>& gameObjects, SDL_Window*& window) override;
+	virtual void Update(double dTime) override;
 };
