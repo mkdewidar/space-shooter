@@ -2,8 +2,6 @@
 
 #include "System.h"
 
-#define SCREENWIDTH 1600
-#define SCREENHEIGHT 900
 #define GAMENAME "Space Shooter"
 
 /*
@@ -12,6 +10,7 @@ Defines the system that manages the drawing to the screen
 class Renderer
 	: public System
 {
+friend class Mesh2D;
 public:
 	Renderer();
 	~Renderer();
@@ -19,6 +18,9 @@ public:
 	void Update(double dTime) override;
 
 	void HandleMessage(Msg* postedMsg) override;
+
+	static const int WIDTH = 1600;
+	static const int HEIGHT = 900;
 
 private:
 	// pointer to the SDL window

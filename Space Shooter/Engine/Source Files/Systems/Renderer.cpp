@@ -5,7 +5,7 @@
 Renderer::Renderer()
 {
 	this->window = SDL_CreateWindow(GAMENAME, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-		SCREENWIDTH, SCREENHEIGHT, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN);
+		Renderer::WIDTH, Renderer::HEIGHT, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN);
 
 	this->renderer = SDL_CreateRenderer(window, 0, 0);
 }
@@ -26,17 +26,13 @@ void Renderer::Update(double dTime)
 
 	SDL_SetRenderDrawColor(this->renderer, this->drawColor.r, this->drawColor.g, this->drawColor.b, this->drawColor.a);
 
-	for (size_t objectIndex = 0; objectIndex < this->objects->size(); objectIndex++)
+	for (GameObject* object : (*this->objects))
 	{
-		// front is called to get the pointer to the first element from the vector
-		SDL_RenderDrawLines(this->renderer, &(*this->objects)[objectIndex]->GetDrawableCoords().front(),
-			(*this->objects)[objectIndex]->GetDrawableCoords().size());
-
-		// used to draw the center, not necessary
-		SDL_RenderDrawPoint(this->renderer, (int)(*this->objects)[objectIndex]->center.x, 
-			(int)(*this->objects)[objectIndex]->center.y);
+		 // front is called to get the pointer to the first element from the vector
+			SDL_RenderDrawLines(this->renderer, 
+				&(object->mesh.GetDrawableCoords(object->rigidBody.position).front()),
+				object->mesh.GetDrawableCoords(object->rigidBody.position).size());
 	}
-
 
 	// push to screen
 	SDL_RenderPresent(this->renderer);

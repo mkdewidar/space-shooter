@@ -1,6 +1,6 @@
 #include "../../Header Files/Systems/LogicManager.h"
 
-
+#include "../../Header Files/Systems/Renderer.h"
 
 LogicManager::LogicManager()
 {
@@ -25,9 +25,21 @@ void LogicManager::Update(double dTime)
 		}
 	}
 
-	for (size_t objectIndex = 0; objectIndex < this->objects->size(); objectIndex++)
+	
+	for (GameObject* object : (*this->objects))
 	{
-		(*this->objects)[objectIndex]->Update(dTime);
+		object->Update(dTime);
+
+		object->rigidBody.position.x = (object->rigidBody.position.x > Renderer::WIDTH) ?
+			0 : object->rigidBody.position.x;
+		object->rigidBody.position.x = (object->rigidBody.position.x < 0) ?
+			Renderer::WIDTH : object->rigidBody.position.x;
+
+		object->rigidBody.position.y = (object->rigidBody.position.y > Renderer::HEIGHT) ?
+			0 : object->rigidBody.position.y;
+		object->rigidBody.position.y = (object->rigidBody.position.y < 0) ?
+			Renderer::HEIGHT : object->rigidBody.position.y;
+
 	}
 }
 

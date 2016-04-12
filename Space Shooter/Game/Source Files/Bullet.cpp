@@ -2,8 +2,8 @@
 
 
 
-Bullet::Bullet(Vector2D center, Vector2D* vertices, int noOfVertices, Vector2D direction)
-	: GameObject(center, vertices, noOfVertices)
+Bullet::Bullet(Vector2D origin, Vector2D* vertices, int noOfVertices, Vector2D direction)
+	: GameObject(origin, vertices, noOfVertices)
 {
 	this->maxVel = 600;
 	this->movementVector = direction.GetUnitVector() * this->maxVel;
@@ -19,5 +19,5 @@ void Bullet::Update(double dTime)
 	this->currentVel = (this->currentVel < this->minVel) ? this->minVel : this->currentVel;
 	this->currentVel = (this->currentVel > this->maxVel) ? this->maxVel : this->currentVel;
 
-	this->center = this->center + (this->movementVector * dTime);
+	this->mesh.origin = this->mesh.origin + (this->movementVector * dTime);
 }

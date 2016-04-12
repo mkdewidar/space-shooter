@@ -73,6 +73,8 @@
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>C:\Users\mkdewidar\Documents\Visual Studio 2015\Projects\SDL2-devel-2.0.4-VC\SDL2-2.0.4\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\mkdewidar\Documents\Visual Studio 2015\Projects\SDL2-devel-2.0.4-VC\SDL2-2.0.4\lib\x86;$(LibraryPath)</LibraryPath>
+    <CodeAnalysisRuleSet>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Team Tools\Static Analysis Tools\Rule Sets\NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -94,6 +96,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>C:\Users\mkdewidar\Documents\Visual Studio 2015\Projects\SDL2-devel-2.0.4-VC\SDL2-2.0.4\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -157,8 +160,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Source Files\Systems\GameState.cpp" />
-    <ClCompile Include="Game\Source Files\Asteroid.cpp" />
-    <ClCompile Include="Game\Source Files\Bullet.cpp" />
+    <ClCompile Include="Engine\Source Files\GameComponent.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Engine.cpp" />
     <ClCompile Include="Engine\Source Files\GameObject.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\LogicManager.cpp" />
@@ -170,14 +172,14 @@
     <ClCompile Include="Engine\Source Files\Systems\Renderer.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\System.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\TimeManager.cpp" />
-    <ClCompile Include="Engine\Source Files\VectorShape.cpp" />
+    <ClCompile Include="Engine\Source Files\Mesh2D.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\main.cpp" />
     <ClCompile Include="Engine\Source Files\Vector2D.cpp" />
+    <ClCompile Include="Engine\Source Files\RigidBody2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Header Files\Systems\GameState.h" />
-    <ClInclude Include="Game\Header Files\Asteroid.h" />
-    <ClInclude Include="Game\Header Files\Bullet.h" />
+    <ClInclude Include="Engine\Header Files\GameComponent.h" />
     <ClInclude Include="Engine\Header Files\Systems\Engine.h" />
     <ClInclude Include="Engine\Header Files\GameObject.h" />
     <ClInclude Include="Engine\Header Files\Systems\LogicManager.h" />
@@ -189,8 +191,9 @@
     <ClInclude Include="Engine\Header Files\Systems\Renderer.h" />
     <ClInclude Include="Engine\Header Files\Systems\System.h" />
     <ClInclude Include="Engine\Header Files\Systems\TimeManager.h" />
-    <ClInclude Include="Engine\Header Files\VectorShape.h" />
+    <ClInclude Include="Engine\Header Files\Mesh2D.h" />
     <ClInclude Include="Engine\Header Files\Vector2D.h" />
+    <ClInclude Include="Engine\Header Files\RigidBody2D.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

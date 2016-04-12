@@ -1,35 +1,27 @@
 #pragma once
 
-#include "VectorShape.h"
-
-/*
-Enum representing all tags that can be assigned to game objects
-*/
-enum ObjectTags
-{
-	PLAYER,
-	ASTEROID,
-	BULLET
-};
+#include "Mesh2D.h"
+#include "RigidBody2D.h"
 
 /*
 The base class for any game object that can exist
 in the game.
 */
-class GameObject 
-	: public VectorShape
+class GameObject
 {
 public:
 	// TODO: ADD A HANDLE WHICH IDENTIFIES THE OBJECT
 
+	Mesh2D mesh;
+	RigidBody2D rigidBody;
+
 	/*
 	Creates an game object
-	@param center the center coordinates for the game object
 	@param vertices the vertices that define the shape of the game object
-		relative to the center coordinate going clockwise
+		relative to the origin coordinate going clockwise
 	@param noOfVertices the number of vertices for the shape
 	*/
-	GameObject(Vector2D center, Vector2D* vertices, int noOfVertices);
+	GameObject(Vector2D* vertices, int noOfVertices);
 	~GameObject();
 
 	/*
@@ -48,20 +40,13 @@ public:
 	*/
 	int GetProximity();
 
-	// proximity radius relative to center of the shape
+	// proximity radius relative to origin of the shape
 	int proximity = 100;
-
-	// amount of rotation to be applied to an objects vertices
-	double rotateAmount = 200;
 
 	// a vector representing the direction and magnitude that
 	// an object needs to move in
 	Vector2D movementVector;
 
-	double currentVel = 0;
-	double accelRate = 100;
-
-	int maxVel = 500;
-	int minVel = 0;
+	
 };
 

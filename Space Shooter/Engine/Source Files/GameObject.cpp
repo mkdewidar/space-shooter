@@ -3,8 +3,8 @@
 
 
 
-GameObject::GameObject(Vector2D center, Vector2D* vertices, int noOfVertices)
-	: VectorShape(center, vertices, noOfVertices)
+GameObject::GameObject(Vector2D* vertices, int noOfVertices)
+	: mesh(vertices, noOfVertices)
 {
 }
 
@@ -40,9 +40,9 @@ int GameObject::GetProximity()
 	//*/
 
  //   // point in circle check
- //   // is the objects center within this objects proximity range?
- //   // (x - center x of circle)^2 + (y - center y of circle)^2 <= radius of circle^2
-	//if ((pow((otherObject->center.x - this->center.x), 2) + pow((otherObject->center.y - this->center.y), 2))
+ //   // is the objects origin within this objects proximity range?
+ //   // (x - origin x of circle)^2 + (y - origin y of circle)^2 <= radius of circle^2
+	//if ((pow((otherObject->origin.x - this->origin.x), 2) + pow((otherObject->origin.y - this->origin.y), 2))
 	//	<= pow(this->GetProximity(), 2))
 	//{
 	//	// START SAT COLLISION

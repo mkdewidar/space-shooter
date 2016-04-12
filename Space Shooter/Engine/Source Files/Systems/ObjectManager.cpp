@@ -1,6 +1,6 @@
 #include "../../Header Files/Systems/ObjectManager.h"
 
-#include "../../Header Files/VectorShape.h"
+#include "../../Header Files/Mesh2D.h"
 #include "../../Header Files/Vector2D.h"
 #include "../../../Game/Header Files/Player.h"
 #include "../../../Game/Header Files/Asteroid.h"
@@ -30,18 +30,18 @@ void ObjectManager::HandleMessage(Msg* postedMsg)
 	if (postedMsg->msgType == MsgTypes::CREATEOBJECTMSG)
 	{
 		// TODO: ADD CODE TO CREATE OBJECT BASED ON DATA IN THE MSG
-		Vector2D center = PLAYERPOSITIONS;
+		Vector2D origin = PLAYERPOSITIONS;
 		Vector2D vertices[3] = PLAYERSHAPES;
-		Player* player = new Player(center, vertices, 3);
+		Player* player = new Player(vertices, 3);
 		this->objects->push_back(player);
 
-		center = ASTEROIDPOSITIONS;
+		/*origin = ASTEROIDPOSITIONS;
 		Vector2D vertices2[6] = ASTEROIDSHAPE;
 		int totalAsteroids = (rand() % 10) + 1;
 		for (int noOfAsteroids = 0; noOfAsteroids < totalAsteroids; noOfAsteroids++)
 		{
-			this->objects->push_back(new Asteroid(center, vertices2, 6));
-		}
+			this->objects->push_back(new Asteroid(origin, vertices2, 6));
+		}*/
 	}
 	if (postedMsg->msgType == MsgTypes::DELETEOBJECTMSG)
 	{

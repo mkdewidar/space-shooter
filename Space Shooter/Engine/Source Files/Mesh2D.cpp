@@ -1,11 +1,9 @@
-#include "../Header Files/VectorShape.h"
+#include "../Header Files/Mesh2D.h"
 #include "../Header Files/Vector2D.h"
 
 
-VectorShape::VectorShape(Vector2D center, Vector2D* vertices, int noOfVertices)
+Mesh2D::Mesh2D(Vector2D* vertices, int noOfVertices)
 {
-	this->center = center;
-
 	for (size_t vertexIndex = 0; vertexIndex < (size_t)noOfVertices; vertexIndex++)
 	{
 		this->vertices.push_back(vertices[vertexIndex]);
@@ -14,34 +12,27 @@ VectorShape::VectorShape(Vector2D center, Vector2D* vertices, int noOfVertices)
 	this->forwardDirection = this->vertices[0];
 }
 
-VectorShape::~VectorShape()
+Mesh2D::~Mesh2D()
 {
 }
 
-vector<Vector2D> VectorShape::GetWorldCoords()
+vector<SDL_Point> Mesh2D::GetDrawableCoords(Vector2D position)
 {
-	// the coords that will be returned
-	vector<Vector2D> coords;
+	vector<Vector2D> worldCoords;
+
 	// only need as much memory as the vertices
-	coords.reserve(this->vertices.size());
+	worldCoords.reserve(this->vertices.size());
 
 	for (Vector2D point : this->vertices)
 	{
-		coords.push_back((this->center + point));
+		worldCoords.push_back((position + point));
 	}
 
-	return coords;
-}
-
-
-vector<SDL_Point> VectorShape::GetDrawableCoords()
-{
-	vector<Vector2D> vectorCoords = this->GetWorldCoords();
-	vectorCoords.push_back(vectorCoords.front());
+	worldCoords.push_back(worldCoords.front());
 
 	vector<SDL_Point> coords;
 
-	for (Vector2D vectorPoint : vectorCoords)
+	for (Vector2D vectorPoint : worldCoords)
 	{
 		coords.push_back(vectorPoint.GetSDLPoint());
 	}
@@ -49,7 +40,7 @@ vector<SDL_Point> VectorShape::GetDrawableCoords()
 	return coords;
 }
 
-vector<Vector2D> VectorShape::GetVectorEdges()
+vector<Vector2D> Mesh2D::GetVectorEdges()
 {
 	vector<Vector2D> edges;
 	
@@ -78,7 +69,7 @@ vector<Vector2D> VectorShape::GetVectorEdges()
 	return edges;
 }
 
-void VectorShape::RotateVertices(double angle)
+void Mesh2D::RotateVertices(double angle)
 {
 	double angleR = (angle * M_PI) / 180;
 

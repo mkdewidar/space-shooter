@@ -25,12 +25,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Game\Source Files\Asteroid.cpp">
-      <Filter>Game\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Source Files\Bullet.cpp">
-      <Filter>Game\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Game\Source Files\Player.cpp">
       <Filter>Game\Source Files</Filter>
     </ClCompile>
@@ -38,9 +32,6 @@
       <Filter>Game\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Source Files\Vector2D.cpp">
-      <Filter>Game\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine\Source Files\VectorShape.cpp">
       <Filter>Game\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Source Files\Systems\Engine.cpp">
@@ -76,18 +67,18 @@
     <ClCompile Include="Engine\Source Files\Systems\System.cpp">
       <Filter>Engine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Source Files\Mesh2D.cpp">
+      <Filter>Game\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Source Files\GameComponent.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Source Files\RigidBody2D.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game\Header Files\Asteroid.h">
-      <Filter>Game\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Header Files\Bullet.h">
-      <Filter>Game\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Game\Header Files\Player.h">
-      <Filter>Game\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\Header Files\VectorShape.h">
       <Filter>Game\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Header Files\GameObject.h">
@@ -124,6 +115,15 @@
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Header Files\Systems\TimeManager.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Header Files\Mesh2D.h">
+      <Filter>Game\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Header Files\GameComponent.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Header Files\RigidBody2D.h">
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
