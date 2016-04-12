@@ -42,11 +42,5 @@ public:
 
 	// proximity radius relative to origin of the shape
 	int proximity = 100;
-
-	// a vector representing the direction and magnitude that
-	// an object needs to move in
-	Vector2D movementVector;
-
-	
 };
 

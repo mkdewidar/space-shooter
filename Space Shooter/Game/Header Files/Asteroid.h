@@ -9,9 +9,12 @@ class Asteroid :
 {
 public:
 
-	Asteroid(Vector2D origin, Vector2D* vertices, int noOfVertices);
+	Asteroid(Vector2D* vertices, int noOfVertices);
 
 	~Asteroid();
 
 	virtual void Update(double dTime) override;
+
+private:
+	int rotateAmount;
 };

@@ -168,6 +168,7 @@
     <ClCompile Include="Engine\Source Files\Systems\Messages.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\ObjectManager.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Physics.cpp" />
+    <ClCompile Include="Game\Source Files\Asteroid.cpp" />
     <ClCompile Include="Game\Source Files\Player.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Renderer.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\System.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="Engine\Header Files\Systems\Messages.h" />
     <ClInclude Include="Engine\Header Files\Systems\ObjectManager.h" />
     <ClInclude Include="Engine\Header Files\Systems\Physics.h" />
+    <ClInclude Include="Game\Header Files\Asteroid.h" />
     <ClInclude Include="Game\Header Files\Player.h" />
     <ClInclude Include="Engine\Header Files\Systems\Renderer.h" />
     <ClInclude Include="Engine\Header Files\Systems\System.h" />
