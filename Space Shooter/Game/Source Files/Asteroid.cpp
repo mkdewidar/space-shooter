@@ -2,8 +2,8 @@
 
 
 
-Asteroid::Asteroid(Vector2D * vertices, int noOfVertices)
-	: GameObject(vertices, noOfVertices)
+Asteroid::Asteroid(Vector2D * vertices, int noOfVertices, Vector2D* meshVertices, int noOfmeshVerts)
+	: GameObject(vertices, noOfVertices, meshVertices, noOfmeshVerts)
 {
 	int randXMovement = (rand() % 500) - 250;
 	int randYMovement = (rand() % 500) - 250;
@@ -18,4 +18,5 @@ Asteroid::~Asteroid()
 
 void Asteroid::Update(double dTime)
 {
+	this->mesh.RotateVertices(this->rotateAmount * dTime);
 }

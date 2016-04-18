@@ -18,16 +18,7 @@ Mesh2D::~Mesh2D()
 
 vector<SDL_Point> Mesh2D::GetDrawableCoords(Vector2D position)
 {
-	vector<Vector2D> worldCoords;
-
-	// only need as much memory as the vertices
-	worldCoords.reserve(this->vertices.size());
-
-	for (Vector2D point : this->vertices)
-	{
-		worldCoords.push_back((position + point));
-	}
-
+	vector<Vector2D> worldCoords = this->GetCoordsInSpace(position);
 	worldCoords.push_back(worldCoords.front());
 
 	vector<SDL_Point> coords;
@@ -38,6 +29,21 @@ vector<SDL_Point> Mesh2D::GetDrawableCoords(Vector2D position)
 	}
 
 	return coords;
+}
+
+vector<Vector2D> Mesh2D::GetCoordsInSpace(Vector2D position)
+{
+	vector<Vector2D> newCoords;
+
+	// only need as much memory as the vertices
+	newCoords.reserve(this->vertices.size());
+
+	for (Vector2D point : this->vertices)
+	{
+		newCoords.push_back((position + point));
+	}
+
+	return newCoords;
 }
 
 vector<Vector2D> Mesh2D::GetVectorEdges()

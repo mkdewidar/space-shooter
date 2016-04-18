@@ -1,17 +1,29 @@
-﻿  GameObject.cpp
+﻿  SlotMap.cpp
   Generating Code...
   Compiling...
-  Player.cpp
-  Asteroid.cpp
-  ObjectManager.cpp
-  Engine.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
   main.cpp
   System.cpp
   Renderer.cpp
   Physics.cpp
+  ObjectManager.cpp
   MessageBus.cpp
   LogicManager.cpp
   GameState.cpp
-  Space Shooter.vcxproj -> C:\Users\mkdewidar\Documents\Visual Studio 2015\Projects\Space Shooter\Debug\Space Shooter.exe
+  Engine.cpp
+  Generating Code...
+Engine.obj : error LNK2019: unresolved external symbol "public: __thiscall SlotMap<class GameObject *>::SlotMap<class GameObject *>(int)" (??0?$SlotMap@PAVGameObject@@@@QAE@H@Z) referenced in function "public: __thiscall Engine::Engine(void)" (??0Engine@@QAE@XZ)
+Renderer.obj : error LNK2001: unresolved external symbol "public: __thiscall SlotMap<class GameObject *>::~SlotMap<class GameObject *>(void)" (??1?$SlotMap@PAVGameObject@@@@QAE@XZ)
+Engine.obj : error LNK2001: unresolved external symbol "public: __thiscall SlotMap<class GameObject *>::~SlotMap<class GameObject *>(void)" (??1?$SlotMap@PAVGameObject@@@@QAE@XZ)
+LogicManager.obj : error LNK2001: unresolved external symbol "public: __thiscall SlotMap<class GameObject *>::~SlotMap<class GameObject *>(void)" (??1?$SlotMap@PAVGameObject@@@@QAE@XZ)
+ObjectManager.obj : error LNK2001: unresolved external symbol "public: __thiscall SlotMap<class GameObject *>::~SlotMap<class GameObject *>(void)" (??1?$SlotMap@PAVGameObject@@@@QAE@XZ)
+Physics.obj : error LNK2001: unresolved external symbol "public: __thiscall SlotMap<class GameObject *>::~SlotMap<class GameObject *>(void)" (??1?$SlotMap@PAVGameObject@@@@QAE@XZ)
+Engine.obj : error LNK2019: unresolved external symbol "public: class GameObject * __thiscall SlotMap<class GameObject *>::operator[](unsigned int)const " (??A?$SlotMap@PAVGameObject@@@@QBEPAVGameObject@@I@Z) referenced in function "public: __thiscall Engine::~Engine(void)" (??1Engine@@QAE@XZ)
+LogicManager.obj : error LNK2001: unresolved external symbol "public: class GameObject * __thiscall SlotMap<class GameObject *>::operator[](unsigned int)const " (??A?$SlotMap@PAVGameObject@@@@QBEPAVGameObject@@I@Z)
+Physics.obj : error LNK2001: unresolved external symbol "public: class GameObject * __thiscall SlotMap<class GameObject *>::operator[](unsigned int)const " (??A?$SlotMap@PAVGameObject@@@@QBEPAVGameObject@@I@Z)
+Renderer.obj : error LNK2001: unresolved external symbol "public: class GameObject * __thiscall SlotMap<class GameObject *>::operator[](unsigned int)const " (??A?$SlotMap@PAVGameObject@@@@QBEPAVGameObject@@I@Z)
+Engine.obj : error LNK2019: unresolved external symbol "public: unsigned int __thiscall SlotMap<class GameObject *>::Capacity(void)const " (?Capacity@?$SlotMap@PAVGameObject@@@@QBEIXZ) referenced in function "public: __thiscall Engine::~Engine(void)" (??1Engine@@QAE@XZ)
+LogicManager.obj : error LNK2001: unresolved external symbol "public: unsigned int __thiscall SlotMap<class GameObject *>::Capacity(void)const " (?Capacity@?$SlotMap@PAVGameObject@@@@QBEIXZ)
+Physics.obj : error LNK2001: unresolved external symbol "public: unsigned int __thiscall SlotMap<class GameObject *>::Capacity(void)const " (?Capacity@?$SlotMap@PAVGameObject@@@@QBEIXZ)
+Renderer.obj : error LNK2001: unresolved external symbol "public: unsigned int __thiscall SlotMap<class GameObject *>::Capacity(void)const " (?Capacity@?$SlotMap@PAVGameObject@@@@QBEIXZ)
+ObjectManager.obj : error LNK2019: unresolved external symbol "public: unsigned int __thiscall SlotMap<class GameObject *>::AddItem(class GameObject *)" (?AddItem@?$SlotMap@PAVGameObject@@@@QAEIPAVGameObject@@@Z) referenced in function "public: virtual void __thiscall ObjectManager::HandleMessage(class Msg *)" (?HandleMessage@ObjectManager@@UAEXPAVMsg@@@Z)
+C:\Users\mkdewidar\Documents\Visual Studio 2015\Projects\Space Shooter\Debug\Space Shooter.exe : fatal error LNK1120: 5 unresolved externals

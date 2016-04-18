@@ -21,7 +21,8 @@ public:
 		relative to the origin coordinate going clockwise
 	@param noOfVertices the number of vertices for the shape
 	*/
-	GameObject(Vector2D* vertices, int noOfVertices);
+	GameObject(Vector2D* vertices, int noOfVertices,
+		Vector2D* meshVertices, int noOfmeshVerts);
 	~GameObject();
 
 	/*
@@ -31,16 +32,5 @@ public:
 		in the game
 	*/
 	virtual void Update(double dTime) = 0;
-
-	/*
-	Gets a radius value which is used to check the proximity
-		to other objects using circle collision
-	@return an int which represents a radius to be used as a
-		proximity check using circle collision.
-	*/
-	int GetProximity();
-
-	// proximity radius relative to origin of the shape
-	int proximity = 100;
 };
 

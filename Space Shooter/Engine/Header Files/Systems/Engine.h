@@ -8,7 +8,6 @@
 #include "Physics.h"
 #include "Renderer.h"
 
-
 /*
 The game engine that runs the game
 */
@@ -26,9 +25,7 @@ public:
 private:
 	// object that allows time capabilities
 	TimeManager time;
-
-	// vector of all the game objects in the scene
-	vector<GameObject*> gameObjects;
+	SlotMap<GameObject*> gameObjects;
 
 	MessageBus messageBus;
 	GameState gameState;

@@ -22,7 +22,7 @@ public:
 	@param gameSystems a vector of pointers to all the game systems
 		that the bus has to connect
 	*/
-	void SetupMsgBusReferences(vector<System*> gameSystems);
+	void SetupSystem(vector<System*> gameSystems);
 
 	/*
 	Posts the message on the bus, all the systems the bus is aware of 

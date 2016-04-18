@@ -10,18 +10,17 @@ class Player
 	: public GameObject
 {
 public:
-	Player(Vector2D* vertices, int noOfVertices);
+	Player(Vector2D* vertices, int noOfVertices, Vector2D* meshVertices, int noOfmeshVerts);
 	~Player();
 
 	virtual void Update(double dTime) override;
 
 private:
 	// amount of rotation to be applied to an objects vertices
-	double rotateAmount = 200;
-	double currentVel = 0;
-	double accelRate = 20;
-
-	int maxVel = 50;
-	int minVel = 0;
+	double rotateAmount;
+	double currentVel;
+	double accelRate;
+	int maxVel;
+	int minVel;
 };
 

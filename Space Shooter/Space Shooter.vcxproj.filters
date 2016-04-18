@@ -79,6 +79,9 @@
     <ClCompile Include="Game\Source Files\Asteroid.cpp">
       <Filter>Engine\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Source Files\Systems\SlotMap.cpp">
+      <Filter>Engine\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game\Header Files\Player.h">
@@ -130,6 +133,9 @@
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game\Header Files\Asteroid.h">
+      <Filter>Engine\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Header Files\Systems\SlotMap.h">
       <Filter>Engine\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -9,7 +9,7 @@ class Asteroid :
 {
 public:
 
-	Asteroid(Vector2D* vertices, int noOfVertices);
+	Asteroid(Vector2D* vertices, int noOfVertices, Vector2D* meshVertices, int noOfmeshVerts);
 
 	~Asteroid();
 

@@ -2,7 +2,8 @@
 
 #include "../../Header Files/Systems/Renderer.h"
 
-LogicManager::LogicManager()
+LogicManager::LogicManager(SlotMap<GameObject*> gameObjs)
+	: gameObjects(gameObjs)
 {
 }
 
@@ -26,8 +27,11 @@ void LogicManager::Update(double dTime)
 	}
 
 	
-	for (GameObject* object : (*this->objects))
+	for (size_t index = 0; index < this->gameObjects.Capacity(); index++)
 	{
+		// used to simplify the statements below
+		GameObject* object = this->gameObjects[index];
+
 		object->Update(dTime);
 
 		object->rigidBody.position.x = (object->rigidBody.position.x > Renderer::WIDTH) ?
@@ -39,7 +43,6 @@ void LogicManager::Update(double dTime)
 			0 : object->rigidBody.position.y;
 		object->rigidBody.position.y = (object->rigidBody.position.y < 0) ?
 			Renderer::HEIGHT : object->rigidBody.position.y;
-
 	}
 }
 

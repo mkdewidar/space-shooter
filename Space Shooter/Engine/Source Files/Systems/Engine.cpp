@@ -2,18 +2,23 @@
 
 
 Engine::Engine()
+	: gameObjects(),
+	objectManager(this->gameObjects),
+	logicManager(this->gameObjects),
+	physics(this->gameObjects),
+	renderer(this->gameObjects)
 {
-	this->gameState.SetupMsgBusReferences(&this->messageBus, &this->gameObjects);
+	this->gameState.SetupSystem(&this->messageBus);
 
-	this->objectManager.SetupMsgBusReferences(&this->messageBus, &this->gameObjects);
+	this->objectManager.SetupSystem(&this->messageBus);
 
-	this->logicManager.SetupMsgBusReferences(&this->messageBus, &this->gameObjects);
+	this->logicManager.SetupSystem(&this->messageBus);
 
-	this->physics.SetupMsgBusReferences(&this->messageBus, &this->gameObjects);
+	this->physics.SetupSystem(&this->messageBus);
 
-	this->renderer.SetupMsgBusReferences(&this->messageBus, &this->gameObjects);
+	this->renderer.SetupSystem(&this->messageBus);
 
-	this->messageBus.SetupMsgBusReferences( { &this->gameState, &this->objectManager, 
+	this->messageBus.SetupSystem( { &this->gameState, &this->objectManager, 
 		&this->logicManager, &this->physics, &this->renderer } );
 
 	CreateObjectMsg msg;
@@ -22,9 +27,9 @@ Engine::Engine()
 
 Engine::~Engine()
 {
-	for (GameObject* object : this->gameObjects)
+	for (size_t index = 0; index < this->gameObjects.Capacity(); index++)
 	{
-		delete object;
+		delete this->gameObjects[index];
 	}
 
 	SDL_Quit();

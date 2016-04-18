@@ -31,3 +31,25 @@ CreateObjectMsg::CreateObjectMsg()
 CreateObjectMsg::~CreateObjectMsg()
 {
 }
+
+//---Delete Object Msg---//
+
+DeleteObjectMsg::DeleteObjectMsg()
+{
+	this->msgType = MsgTypes::DELETEOBJECTMSG;
+}
+
+DeleteObjectMsg::~DeleteObjectMsg()
+{
+}
+
+//---Object Collision Msg---//
+
+CollisionMsg::CollisionMsg()
+{
+	this->msgType = MsgTypes::COLLISIONMSG;
+}
+
+CollisionMsg::~CollisionMsg()
+{
+}

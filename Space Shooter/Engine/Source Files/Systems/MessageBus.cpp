@@ -11,7 +11,7 @@ MessageBus::~MessageBus()
 {
 }
 
-void MessageBus::SetupMsgBusReferences(vector<System*> gameSystems)
+void MessageBus::SetupSystem(vector<System*> gameSystems)
 {
 	this->systems = gameSystems;
 }

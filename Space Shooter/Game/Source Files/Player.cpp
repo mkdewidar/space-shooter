@@ -2,9 +2,14 @@
 #include "../Header Files/Bullet.h"
 
 
-Player::Player(Vector2D * vertices, int noOfVertices)
-	: GameObject(vertices, noOfVertices)
+Player::Player(Vector2D * vertices, int noOfVertices, Vector2D* meshVertices, int noOfmeshVerts)
+	: GameObject(vertices, noOfVertices, meshVertices, noOfmeshVerts)
 {
+	this->rotateAmount = 200;
+	this->currentVel = 0;
+	this->accelRate = 20;
+	this->maxVel = 25;
+	this->minVel = 0;
 }
 
 Player::~Player()
@@ -39,20 +44,4 @@ void Player::Update(double dTime)
 	//	gameObjects.push_back(newBullet);
 	//	newBullet->handle = gameObjects.size() - 1;
 	//}
-
-
-	//for (size_t objectIndex = 0; objectIndex < gameObjects.size(); objectIndex++)
-	//{
-	//	// if the coords are the same that's yourself!!
-	//	if ((gameObjects[objectIndex]->origin.x == this->origin.x) 
-	//		&& (gameObjects[objectIndex]->origin.y == this->origin.y))
-	//	{
-	//		continue;
-	//	}
-	//	this->AmIColliding(gameObjects[objectIndex]);
-	//}
-
-	// Allows all objects to wrap around the screen,
-	// currently based on origin which means the bigger the object the more
-	// awkward it is, should probably implement some sort of 
 }

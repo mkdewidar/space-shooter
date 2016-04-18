@@ -9,7 +9,7 @@ class LogicManager
 	: public System
 {
 public:
-	LogicManager();
+	LogicManager(SlotMap<GameObject*> gameObjs);
 	~LogicManager();
 
 	void Update(double dTime) override;
@@ -19,5 +19,8 @@ public:
 private:
 	// variable used to store current event in event queue
 	SDL_Event e;
+
+	// ref to all the game objects in the game, obtained from the slot map
+	const SlotMap<GameObject*>& gameObjects;
 };
 

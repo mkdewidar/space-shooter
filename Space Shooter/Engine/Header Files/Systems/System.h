@@ -3,6 +3,7 @@
 #include <vector>
 #include "../GameObject.h"
 #include "MessageBus.h"
+#include "SlotMap.h"
 
 using std::vector;
 
@@ -36,12 +37,9 @@ public:
 	@param messageBus the message bus that the system should use
 		for communication with other systems
 	*/
-	void SetupMsgBusReferences(MessageBus* msgBus, vector<GameObject*>* gameObjects);
+	virtual void SetupSystem(MessageBus* msgBus);
 
 protected:
 	// the message bus that the system posts messages to
 	MessageBus* messageBus;
-
-	// pointer to the vector of game objects in the game
-	vector<GameObject*>* objects;
 };

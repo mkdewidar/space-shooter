@@ -36,6 +36,14 @@ public:
 	vector<SDL_Point> GetDrawableCoords(Vector2D position);
 
 	/*
+	Convert the coordinates to space provided
+	@param position the position of the mesh in the space the 
+		coords are to be in.
+	@return vector of all of the points in the space
+	*/
+	vector<Vector2D> GetCoordsInSpace(Vector2D position);
+
+	/*
 	Gets all of the edges coords that make up the shape going around clockwise
 	@return vector of all of Vector2D's which determine the edges
 	*/
@@ -44,7 +52,7 @@ public:
 	/*
 	Rotates the vertices that define the game object
 	@param angle the angle to rotate by where north is 0 degrees
-	angle must be in eular angles
+		angle must be in eular angles
 	*/
 	void RotateVertices(double angle);
 

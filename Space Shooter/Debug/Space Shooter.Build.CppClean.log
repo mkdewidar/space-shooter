@@ -9,6 +9,7 @@ c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space sho
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\messages.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\objectmanager.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\physics.obj
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\asteroid.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\player.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\renderer.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\system.obj
@@ -17,12 +18,15 @@ c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space sho
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\main.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\vector2d.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\rigidbody2d.obj
-c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\debug\space shooter.ilk
-c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\debug\space shooter.exe
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\slotmap.obj
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\debug\space shooter.pdb
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\cl.command.1.tlog
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\cl.read.1.tlog
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\cl.write.1.tlog
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link-cvtres.read.1.tlog
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link-cvtres.write.1.tlog
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link-rc.read.1.tlog
+c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link-rc.write.1.tlog
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link.command.1.tlog
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link.read.1.tlog
 c:\users\mkdewidar\documents\visual studio 2015\projects\space shooter\space shooter\debug\space shooter.tlog\link.write.1.tlog

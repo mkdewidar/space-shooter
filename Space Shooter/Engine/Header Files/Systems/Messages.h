@@ -10,7 +10,7 @@ enum MsgTypes
 {
 	CREATEOBJECTMSG,
 	DELETEOBJECTMSG,
-	OBJECTCOLLISIONMSG,
+	COLLISIONMSG,
 	ENDGAME
 };
 
@@ -21,7 +21,7 @@ public:
 	~Msg();
 
 	MsgTypes msgType;
-	// TODO: TO PREVENT MESSAGING YOURSELF, MAYBE ADD SOURCESYSTEM
+	// TODO: can avoid system messaging itself by adding a source system member.
 };
 
 class EndGameMsg
@@ -38,4 +38,26 @@ class CreateObjectMsg
 public:
 	CreateObjectMsg();
 	~CreateObjectMsg();
+
+	// TODO: members to identify the object to be created
+};
+
+class DeleteObjectMsg
+	: public Msg
+{
+public:
+	DeleteObjectMsg();
+	~DeleteObjectMsg();
+
+	// TODO: members to identify the object to be deleted
+};
+
+class CollisionMsg
+	: public Msg
+{
+public:
+	CollisionMsg();
+	~CollisionMsg();
+
+	// TODO: members to identify the objects that have collided
 };

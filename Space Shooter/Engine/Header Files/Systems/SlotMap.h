@@ -25,7 +25,7 @@ public:
 		data structure
 	@return the id of the newly added object in the data structure
 	*/
-	const unsigned int AddItem(T newObj);
+	unsigned int AddItem(T newObj);
 
 	/*
 	Removes the item with the index provided from the structure
@@ -39,7 +39,7 @@ public:
 	@return the item that was identified in the data structure
 		using the index provided
 	*/
-	T GetItem(unsigned int objIndex) const;
+	T operator[](unsigned int objIndex) const;
 
 	/*
 	Returns all of the objects in the slot map
@@ -48,9 +48,21 @@ public:
 	*/
 	const vector<T*>& GetAll() const;
 
+	/*
+	Returns the capacity of the slot map
+	@return returns the size of the slot map in memory
+	*/
+	size_t Capacity() const;
+
+	/*
+	Returns the size of the slot map
+	@return returns the number of elements in the slot map
+	*/
+	size_t Size() const;
+
 private:
 	// vector of all the chunks of memory that have been created
-	vector<T*> chunks;
+	vector<vector<T>> chunks;
 
 	// vector of all the free locations in memory, effectively a stack
 	vector<unsigned int> freePositions;

@@ -12,7 +12,8 @@
 #define ASTEROIDSHAPE { { 0, 45 },{ 40, 30 },{ 40, -30 },{ 0, -45 },{ -40, -30 },{ -40, 30 } }
 
 
-ObjectManager::ObjectManager()
+ObjectManager::ObjectManager(SlotMap<GameObject*> gameObjs)
+	: gameObjects(gameObjs)
 {
 }
 
@@ -31,14 +32,15 @@ void ObjectManager::HandleMessage(Msg* postedMsg)
 	{
 		// TODO: ADD CODE TO CREATE OBJECT BASED ON DATA IN THE MSG
 		Vector2D vertices[3] = PLAYERSHAPES;
-		Player* player = new Player(vertices, 3);
-		this->objects->push_back(player);
+		Player* player = new Player(vertices, 3, vertices, 3);
+		this->gameObjects.AddItem(player);
 
 		Vector2D vertices2[6] = ASTEROIDSHAPE;
 		int totalAsteroids = (rand() % 10) + 1;
 		for (int noOfAsteroids = 0; noOfAsteroids < totalAsteroids; noOfAsteroids++)
 		{
-			this->objects->push_back(new Asteroid(vertices2, 6));
+			Asteroid* asteroid = new Asteroid(vertices2, 6, vertices2, 6);
+			this->gameObjects.AddItem(asteroid);
 		}
 	}
 	if (postedMsg->msgType == MsgTypes::DELETEOBJECTMSG)

@@ -2,7 +2,8 @@
 
 
 
-Renderer::Renderer()
+Renderer::Renderer(SlotMap<GameObject*> gameObjs)
+	: gameObjects(gameObjs)
 {
 	this->window = SDL_CreateWindow(GAMENAME, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 		Renderer::WIDTH, Renderer::HEIGHT, SDL_WINDOW_BORDERLESS | SDL_WINDOW_SHOWN);
@@ -26,12 +27,14 @@ void Renderer::Update(double dTime)
 
 	SDL_SetRenderDrawColor(this->renderer, this->drawColor.r, this->drawColor.g, this->drawColor.b, this->drawColor.a);
 
-	for (GameObject* object : (*this->objects))
+	for (size_t index = 0; index < this->gameObjects.Capacity(); index++)
 	{
-		 // front is called to get the pointer to the first element from the vector
-			SDL_RenderDrawLines(this->renderer, 
-				&(object->mesh.GetDrawableCoords(object->rigidBody.position).front()),
-				object->mesh.GetDrawableCoords(object->rigidBody.position).size());
+		GameObject* object = this->gameObjects[index];
+
+		// front is called to get the pointer to the first element from the vector
+		SDL_RenderDrawLines(this->renderer, 
+			&(object->mesh.GetDrawableCoords(object->rigidBody.position).front()),
+			object->mesh.GetDrawableCoords(object->rigidBody.position).size());
 	}
 
 	// push to screen

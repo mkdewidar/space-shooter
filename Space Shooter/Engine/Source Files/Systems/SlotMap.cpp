@@ -26,7 +26,7 @@ SlotMap<T>::~SlotMap()
 }
 
 template<class T>
-const unsigned int SlotMap<T>::AddItem(T newObj)
+unsigned int SlotMap<T>::AddItem(T newObj)
 {
 	// if there is no more space a new chunk is allocated,
 	// the free space is noted
@@ -45,7 +45,7 @@ const unsigned int SlotMap<T>::AddItem(T newObj)
 		}
 	}
 
-	newObjIndex = this->freePositions.back();
+	int newObjIndex = this->freePositions.back();
 	this->freePositions.pop_back();
 
 	this->chunks[(newObjIndex / this->chunkSize)][(newObjIndex % this->chunkSize)] = T;
@@ -59,16 +59,29 @@ void SlotMap<T>::RemoveItem(unsigned int objIndex)
 	// TODO: split index into version and id to actually make the index unique
 	// and unusable after removal from the structure
 	this->freePositions.push_back(objIndex);
+	this->chunks[(newObjIndex / this->chunkSize)][(newObjIndex % this->chunkSize)] = NULL;
 }
 
 template<class T>
-T SlotMap<T>::GetItem(unsigned int objIndex) const
+T SlotMap<T>::operator[](unsigned int objIndex) const
 {
-	return this->chunks[ (objIndex / this->chunkSize) ][ (objIndex % this->chunkSize) ];
+	return this->chunks[(objIndex / this->chunkSize)][(objIndex % this->chunkSize)];
 }
 
 template<class T>
 const vector<T*>& SlotMap<T>::GetAll() const
 {
 	return this->chunks;
+}
+
+template<class T>
+size_t SlotMap<T>::Capacity() const
+{
+	return this->chunks.size() * this->chunkSize;
+}
+
+template<class T>
+size_t SlotMap<T>::Size() const
+{
+	return this->Capacity() - this->freePositions.size();
 }

@@ -9,11 +9,15 @@ class Physics
 	: public System
 {
 public:
-	Physics();
+	Physics(SlotMap<GameObject*> gameObjs);
 	~Physics();
 
 	void Update(double dTime) override;
 
 	void HandleMessage(Msg* postedMsg) override;
+
+private:
+	// the slot map of all game objects in the game
+	const SlotMap<GameObject*>& gameObjects;
 };
 

@@ -168,6 +168,7 @@
     <ClCompile Include="Engine\Source Files\Systems\Messages.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\ObjectManager.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Physics.cpp" />
+    <ClCompile Include="Engine\Source Files\Systems\SlotMap.cpp" />
     <ClCompile Include="Game\Source Files\Asteroid.cpp" />
     <ClCompile Include="Game\Source Files\Player.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Renderer.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="Engine\Header Files\Mesh2D.h" />
     <ClInclude Include="Engine\Header Files\Vector2D.h" />
     <ClInclude Include="Engine\Header Files\RigidBody2D.h" />
+    <ClInclude Include="Engine\Header Files\Systems\SlotMap.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
