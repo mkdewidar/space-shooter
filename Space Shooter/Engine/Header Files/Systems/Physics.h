@@ -9,7 +9,7 @@ class Physics
 	: public System
 {
 public:
-	Physics(SlotMap<GameObject*> gameObjs);
+	Physics(SlotMap<GameObject*>& gameObjs);
 	~Physics();
 
 	void Update(double dTime) override;

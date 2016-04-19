@@ -9,7 +9,7 @@ class LogicManager
 	: public System
 {
 public:
-	LogicManager(SlotMap<GameObject*> gameObjs);
+	LogicManager(SlotMap<GameObject*>& gameObjs);
 	~LogicManager();
 
 	void Update(double dTime) override;

@@ -168,7 +168,6 @@
     <ClCompile Include="Engine\Source Files\Systems\Messages.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\ObjectManager.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Physics.cpp" />
-    <ClCompile Include="Engine\Source Files\Systems\SlotMap.cpp" />
     <ClCompile Include="Game\Source Files\Asteroid.cpp" />
     <ClCompile Include="Game\Source Files\Player.cpp" />
     <ClCompile Include="Engine\Source Files\Systems\Renderer.cpp" />

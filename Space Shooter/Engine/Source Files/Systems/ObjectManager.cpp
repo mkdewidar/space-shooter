@@ -12,7 +12,7 @@
 #define ASTEROIDSHAPE { { 0, 45 },{ 40, 30 },{ 40, -30 },{ 0, -45 },{ -40, -30 },{ -40, 30 } }
 
 
-ObjectManager::ObjectManager(SlotMap<GameObject*> gameObjs)
+ObjectManager::ObjectManager(SlotMap<GameObject*>& gameObjs)
 	: gameObjects(gameObjs)
 {
 }

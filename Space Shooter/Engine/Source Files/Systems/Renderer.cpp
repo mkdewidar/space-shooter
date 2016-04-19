@@ -2,7 +2,7 @@
 
 
 
-Renderer::Renderer(SlotMap<GameObject*> gameObjs)
+Renderer::Renderer(SlotMap<GameObject*>& gameObjs)
 	: gameObjects(gameObjs)
 {
 	this->window = SDL_CreateWindow(GAMENAME, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -30,6 +30,11 @@ void Renderer::Update(double dTime)
 	for (size_t index = 0; index < this->gameObjects.Capacity(); index++)
 	{
 		GameObject* object = this->gameObjects[index];
+
+		if (object == nullptr)
+		{
+			continue;
+		}
 
 		// front is called to get the pointer to the first element from the vector
 		SDL_RenderDrawLines(this->renderer, 

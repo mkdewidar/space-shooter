@@ -1,7 +1,7 @@
 #include "../../Header Files/Systems/Physics.h"
 
 
-Physics::Physics(SlotMap<GameObject*> gameObjs)
+Physics::Physics(SlotMap<GameObject*>& gameObjs)
 	: gameObjects(gameObjs)
 {
 }
@@ -16,12 +16,22 @@ void Physics::Update(double dTime)
 	{
 		GameObject* object = this->gameObjects[index];
 
+		if (object == nullptr)
+		{
+			continue;
+		}
+
 		object->rigidBody.position = object->rigidBody.position + (object->rigidBody.velocity * dTime);
 
 		// with this object check collision with all the other objects
 		for (size_t index = 0; index < this->gameObjects.Capacity(); index++)
 		{
 			GameObject* otherObj = this->gameObjects[index];
+
+			if (otherObj == nullptr || object == otherObj)
+			{
+				continue;
+			}
 			//for every game object in the vector
 			//	check whether the objects are within range using circle collision
 			//	if the object is within range start SAT

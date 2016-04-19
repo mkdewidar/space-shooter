@@ -12,7 +12,7 @@ class Renderer
 {
 friend class Mesh2D;
 public:
-	Renderer(SlotMap<GameObject*> gameObjs);
+	Renderer(SlotMap<GameObject*>& gameObjs);
 	~Renderer();
 
 	void Update(double dTime) override;

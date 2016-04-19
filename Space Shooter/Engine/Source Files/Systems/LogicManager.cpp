@@ -2,7 +2,7 @@
 
 #include "../../Header Files/Systems/Renderer.h"
 
-LogicManager::LogicManager(SlotMap<GameObject*> gameObjs)
+LogicManager::LogicManager(SlotMap<GameObject*>& gameObjs)
 	: gameObjects(gameObjs)
 {
 }
@@ -31,6 +31,11 @@ void LogicManager::Update(double dTime)
 	{
 		// used to simplify the statements below
 		GameObject* object = this->gameObjects[index];
+
+		if (object == nullptr)
+		{
+			continue;
+		}
 
 		object->Update(dTime);
 

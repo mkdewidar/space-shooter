@@ -10,7 +10,7 @@ class ObjectManager
 	: public System
 {
 public:
-	ObjectManager(SlotMap<GameObject*> gameObjs);
+	ObjectManager(SlotMap<GameObject*>& gameObjs);
 	~ObjectManager();
 
 	void Update(double dTime) override;
