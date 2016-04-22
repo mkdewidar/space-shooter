@@ -1,5 +1,4 @@
 #include "../../Header Files/Systems/LogicManager.h"
-
 #include "../../Header Files/Systems/Renderer.h"
 
 LogicManager::LogicManager(SlotMap<GameObject*>& gameObjs)
@@ -37,7 +36,7 @@ void LogicManager::Update(double dTime)
 			continue;
 		}
 
-		object->Update(dTime);
+		object->Update(dTime, this->messageBus);
 
 		object->rigidBody.position.x = (object->rigidBody.position.x > Renderer::WIDTH) ?
 			0 : object->rigidBody.position.x;
@@ -53,5 +52,15 @@ void LogicManager::Update(double dTime)
 
 void LogicManager::HandleMessage(Msg * postedMsg)
 {
-	// TODO: INSERT MESSAGE HANDELING CODE HERE
+	switch (postedMsg->msgType)
+	{
+	case MsgTypes::COLLISIONMSG:
+	{
+		CollisionMsg* colMsg = static_cast<CollisionMsg*>(postedMsg);
+		this->gameObjects[colMsg->objIndex]->OnCollision(this->gameObjects[colMsg->otherObjIndex]);
+		this->gameObjects[colMsg->otherObjIndex]->OnCollision(this->gameObjects[colMsg->objIndex]);
+
+		break;
+	}
+	}
 }

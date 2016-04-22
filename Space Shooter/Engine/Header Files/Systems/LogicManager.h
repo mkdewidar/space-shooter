@@ -23,4 +23,3 @@ private:
 	// ref to all the game objects in the game, obtained from the slot map
 	const SlotMap<GameObject*>& gameObjects;
 };
-

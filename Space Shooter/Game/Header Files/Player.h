@@ -13,7 +13,9 @@ public:
 	Player(Vector2D* vertices, int noOfVertices, Vector2D* meshVertices, int noOfmeshVerts);
 	~Player();
 
-	virtual void Update(double dTime) override;
+	void Update(double dTime, const MessageBus* const msgBus) override;
+
+	void OnCollision(const GameObject* const collidedObj) override;
 
 private:
 	// amount of rotation to be applied to an objects vertices

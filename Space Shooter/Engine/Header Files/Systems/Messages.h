@@ -46,18 +46,19 @@ class DeleteObjectMsg
 	: public Msg
 {
 public:
-	DeleteObjectMsg();
+	DeleteObjectMsg(int objToDel);
 	~DeleteObjectMsg();
 
-	// TODO: members to identify the object to be deleted
+	int objToDel;
 };
 
 class CollisionMsg
 	: public Msg
 {
 public:
-	CollisionMsg();
+	CollisionMsg(int objIndex, int otherObjIndex);
 	~CollisionMsg();
 
-	// TODO: members to identify the objects that have collided
+	int objIndex;
+	int otherObjIndex;
 };

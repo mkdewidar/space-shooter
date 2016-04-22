@@ -34,9 +34,10 @@ CreateObjectMsg::~CreateObjectMsg()
 
 //---Delete Object Msg---//
 
-DeleteObjectMsg::DeleteObjectMsg()
+DeleteObjectMsg::DeleteObjectMsg(int objToDel)
 {
 	this->msgType = MsgTypes::DELETEOBJECTMSG;
+	this->objToDel = objToDel;
 }
 
 DeleteObjectMsg::~DeleteObjectMsg()
@@ -45,9 +46,11 @@ DeleteObjectMsg::~DeleteObjectMsg()
 
 //---Object Collision Msg---//
 
-CollisionMsg::CollisionMsg()
+CollisionMsg::CollisionMsg(int objIndex, int otherObjIndex)
 {
 	this->msgType = MsgTypes::COLLISIONMSG;
+	this->objIndex = objIndex;
+	this->otherObjIndex = otherObjIndex;
 }
 
 CollisionMsg::~CollisionMsg()

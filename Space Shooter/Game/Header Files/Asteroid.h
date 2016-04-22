@@ -3,7 +3,6 @@
 #include "../../Engine/Header Files/GameObject.h"
 
 
-
 class Asteroid :
 	public GameObject
 {
@@ -13,7 +12,9 @@ public:
 
 	~Asteroid();
 
-	virtual void Update(double dTime) override;
+	void Update(double dTime, const MessageBus* const msgBus) override;
+
+	void OnCollision(const GameObject* const collidedObj) override;
 
 private:
 	int rotateAmount;

@@ -33,14 +33,14 @@ void ObjectManager::HandleMessage(Msg* postedMsg)
 		// TODO: ADD CODE TO CREATE OBJECT BASED ON DATA IN THE MSG
 		Vector2D vertices[3] = PLAYERSHAPES;
 		Player* player = new Player(vertices, 3, vertices, 3);
-		this->gameObjects.AddItem(player);
+		player->index = this->gameObjects.AddItem(player);
 
 		Vector2D vertices2[6] = ASTEROIDSHAPE;
 		int totalAsteroids = (rand() % 10) + 1;
 		for (int noOfAsteroids = 0; noOfAsteroids < totalAsteroids; noOfAsteroids++)
 		{
 			Asteroid* asteroid = new Asteroid(vertices2, 6, vertices2, 6);
-			this->gameObjects.AddItem(asteroid);
+			player->index = this->gameObjects.AddItem(asteroid);
 		}
 	}
 	if (postedMsg->msgType == MsgTypes::DELETEOBJECTMSG)

@@ -16,7 +16,7 @@ Player::~Player()
 {
 }
 
-void Player::Update(double dTime)
+void Player::Update(double dTime, const MessageBus* const msgBus)
 {
 	const Uint8* keyboardState = SDL_GetKeyboardState(NULL);
 	if (keyboardState[SDL_SCANCODE_LEFT])
@@ -44,4 +44,8 @@ void Player::Update(double dTime)
 	//	gameObjects.push_back(newBullet);
 	//	newBullet->handle = gameObjects.size() - 1;
 	//}
+}
+
+void Player::OnCollision(const GameObject* const collidedObj)
+{
 }

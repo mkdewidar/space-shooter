@@ -12,6 +12,6 @@ public:
 	Bullet(Vector2D origin, Vector2D* vertices, int noOfVertices, Vector2D direction);
 	~Bullet();
 
-	void Update(double dTime) override;
+	void Update(double dTime, const MessageBus* const msgBus) override;
 };
 

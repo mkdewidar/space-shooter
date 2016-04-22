@@ -7,10 +7,12 @@
 The base class for any game object that can exist
 in the game.
 */
+class MessageBus;
+
 class GameObject
 {
 public:
-	// TODO: ADD A HANDLE WHICH IDENTIFIES THE OBJECT
+	int index;
 
 	Mesh2D mesh;
 	RigidBody2D rigidBody;
@@ -30,7 +32,11 @@ public:
 	@param dTime the time taken to process the last frame
 	@param gameObjects a reference to all the game objects
 		in the game
+	@param logicManager a pointer to the logic manager, used to post messages
+		to other systems and objects
 	*/
-	virtual void Update(double dTime) = 0;
+	virtual void Update(double dTime, const MessageBus* const msgBus) = 0;
+
+	virtual void OnCollision(const GameObject* const collidedObj) = 0;
 };
 
