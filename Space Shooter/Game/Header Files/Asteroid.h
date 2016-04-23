@@ -12,9 +12,9 @@ public:
 
 	~Asteroid();
 
-	void Update(double dTime, const MessageBus* const msgBus) override;
+	void Update(double dTime, LogicManager* const logicManager) override;
 
-	void OnCollision(const GameObject* const collidedObj) override;
+	void OnCollision(const GameObject* const collidedObj, LogicManager* const logicManager) override;
 
 private:
 	int rotateAmount;

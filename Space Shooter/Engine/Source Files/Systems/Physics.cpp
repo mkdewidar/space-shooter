@@ -117,7 +117,7 @@ void Physics::Update(double dTime)
 					}
 				}
 
-				CollisionMsg colMsg = CollisionMsg(object->index, otherObjIndex->index);
+				CollisionMsg colMsg = CollisionMsg(object->handle, otherObjIndex->handle);
 				this->messageBus->PostMessage(&colMsg);
 			}
 		}

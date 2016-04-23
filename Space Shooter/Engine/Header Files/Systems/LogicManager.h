@@ -8,6 +8,22 @@ Defines the system that calls the logic updates for all of the game objects
 class LogicManager
 	: public System
 {
+	/*
+	Function called by game objects to delete object
+	@param logicManager since this is a friend function the reference to
+		the logicManager is required
+	@param objIndex the index of the object to be deleted
+	*/
+	friend void DeleteObject(LogicManager* logicManager, int objIndex);
+
+	/*
+	Function called by game objects to create object
+	@param logicManager since this is a friend function the reference to
+		the logicManager is required
+	@param objType the type of the object to be created
+	@return a pointer to the object that was created
+	*/
+	friend GameObject* CreateObject(LogicManager* logicManager, GameObjectTypes objType);
 public:
 	LogicManager(SlotMap<GameObject*>& gameObjs);
 	~LogicManager();

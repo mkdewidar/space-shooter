@@ -36,7 +36,7 @@ void LogicManager::Update(double dTime)
 			continue;
 		}
 
-		object->Update(dTime, this->messageBus);
+		object->Update(dTime, this);
 
 		object->rigidBody.position.x = (object->rigidBody.position.x > Renderer::WIDTH) ?
 			0 : object->rigidBody.position.x;
@@ -57,10 +57,22 @@ void LogicManager::HandleMessage(Msg * postedMsg)
 	case MsgTypes::COLLISIONMSG:
 	{
 		CollisionMsg* colMsg = static_cast<CollisionMsg*>(postedMsg);
-		this->gameObjects[colMsg->objIndex]->OnCollision(this->gameObjects[colMsg->otherObjIndex]);
-		this->gameObjects[colMsg->otherObjIndex]->OnCollision(this->gameObjects[colMsg->objIndex]);
+		this->gameObjects[colMsg->objHandle.index]->OnCollision(this->gameObjects[colMsg->otherObjHandle.index], this);
 
 		break;
 	}
 	}
+}
+
+void DeleteObject(LogicManager * logicManager, int objIndex)
+{
+	DeleteObjectMsg delMsg = DeleteObjectMsg(objIndex);
+	logicManager->messageBus->PostMessage(&delMsg);
+}
+
+GameObject* CreateObject(LogicManager * logicManager, GameObjectTypes objType)
+{
+	CreateObjectMsg createMsg = CreateObjectMsg(objType);
+	logicManager->messageBus->PostMessage(&createMsg);
+	return createMsg.createdObject;
 }

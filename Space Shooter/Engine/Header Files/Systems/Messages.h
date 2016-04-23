@@ -1,10 +1,11 @@
 #pragma once
 
+#include "../../../Game/Header Files/GameObjectTypes.h"
+#include "../GameObject.h"
+
 class System;
 
 /*This file defines all the messages that are the used in the system*/
-
-// need to prevent anyone from making an instant of this class
 
 enum MsgTypes
 {
@@ -14,6 +15,7 @@ enum MsgTypes
 	ENDGAME
 };
 
+// need to prevent anyone from making an instant of this class
 class Msg
 {
 public:
@@ -21,7 +23,6 @@ public:
 	~Msg();
 
 	MsgTypes msgType;
-	// TODO: can avoid system messaging itself by adding a source system member.
 };
 
 class EndGameMsg
@@ -36,10 +37,11 @@ class CreateObjectMsg
 	: public Msg
 {
 public:
-	CreateObjectMsg();
+	CreateObjectMsg(GameObjectTypes objType);
 	~CreateObjectMsg();
 
-	// TODO: members to identify the object to be created
+	GameObjectTypes objType;
+	GameObject* createdObject;
 };
 
 class DeleteObjectMsg
@@ -56,9 +58,9 @@ class CollisionMsg
 	: public Msg
 {
 public:
-	CollisionMsg(int objIndex, int otherObjIndex);
+	CollisionMsg(Identifier objHandle, Identifier otherObjHandle);
 	~CollisionMsg();
 
-	int objIndex;
-	int otherObjIndex;
+	Identifier objHandle;
+	Identifier otherObjHandle;
 };

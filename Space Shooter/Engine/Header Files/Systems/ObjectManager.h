@@ -20,5 +20,8 @@ public:
 private:
 	// all the game objects in the scene
 	SlotMap<GameObject*>& gameObjects;
+
+	// vector of id's of all the objects to be deleted/created
+	vector<int> cleanUpIDs;
 };
 

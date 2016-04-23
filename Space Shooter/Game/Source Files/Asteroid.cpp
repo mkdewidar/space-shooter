@@ -16,12 +16,12 @@ Asteroid::~Asteroid()
 {
 }
 
-void Asteroid::Update(double dTime, const MessageBus* const msgBus)
+void Asteroid::Update(double dTime, LogicManager* const logicManager)
 {
 	this->mesh.RotateVertices(this->rotateAmount * dTime);
 }
 
-void Asteroid::OnCollision(const GameObject * const collidedObj)
+void Asteroid::OnCollision(const GameObject * const collidedObj, LogicManager* const logicManager)
 {
 
 }

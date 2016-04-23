@@ -109,9 +109,11 @@ unsigned int SlotMap<T>::AddItem(T newObj)
 		// since the vector of free positions acts like a stack
 		// the numbers are inserted backwards to start from the top
 		// of the chunk (from 0) to the max chunk size
-		for (size_t index = this->chunkSize; index >= 0; index--)
+		size_t index = this->Capacity() - 1;
+		for (; index >= (this->Capacity() - this->Size()); index--)
 		{
 			this->freePositions.push_back(index);
+			this->chunks[(index / this->chunkSize)][(index % this->chunkSize)] = nullptr;
 		}
 	}
 
@@ -129,7 +131,7 @@ void SlotMap<T>::RemoveItem(unsigned int objIndex)
 	// TODO: split index into version and id to actually make the index unique
 	// and unusable after removal from the structure
 	this->freePositions.push_back(objIndex);
-	this->chunks[(newObjIndex / this->chunkSize)][(newObjIndex % this->chunkSize)] = NULL;
+	this->chunks[(objIndex / this->chunkSize)][(objIndex % this->chunkSize)] = NULL;
 }
 
 template<class T>

@@ -22,10 +22,10 @@ EndGameMsg::~EndGameMsg()
 }
 
 //---Create Object Msg---//
-
-CreateObjectMsg::CreateObjectMsg()
+CreateObjectMsg::CreateObjectMsg(GameObjectTypes objType)
 {
 	this->msgType = MsgTypes::CREATEOBJECTMSG;
+	this->objType = objType;
 }
 
 CreateObjectMsg::~CreateObjectMsg()
@@ -46,11 +46,11 @@ DeleteObjectMsg::~DeleteObjectMsg()
 
 //---Object Collision Msg---//
 
-CollisionMsg::CollisionMsg(int objIndex, int otherObjIndex)
+CollisionMsg::CollisionMsg(Identifier objHandle, Identifier otherObjHandle)
 {
 	this->msgType = MsgTypes::COLLISIONMSG;
-	this->objIndex = objIndex;
-	this->otherObjIndex = otherObjIndex;
+	this->objHandle = objHandle;
+	this->otherObjHandle = otherObjHandle;
 }
 
 CollisionMsg::~CollisionMsg()

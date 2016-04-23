@@ -1,23 +1,31 @@
-#include "../Header Files/Bullet.h"
+#include "..\Header Files\Bullet.h"
 
-
-
-Bullet::Bullet(Vector2D origin, Vector2D* vertices, int noOfVertices, Vector2D direction)
-	: GameObject(origin, vertices, noOfVertices)
+Bullet::Bullet(Vector2D* vertices, int noOfVertices,
+	Vector2D* meshVertices, int noOfmeshVerts)
+	: GameObject(vertices, noOfVertices, meshVertices, noOfmeshVerts)
 {
-	this->maxVel = 600;
-	this->movementVector = direction.GetUnitVector() * this->maxVel;
 }
-
 
 Bullet::~Bullet()
 {
 }
 
-void Bullet::Update(double dTime)
+void Bullet::Update(double dTime, LogicManager * const logicManager)
 {
-	this->currentVel = (this->currentVel < this->minVel) ? this->minVel : this->currentVel;
-	this->currentVel = (this->currentVel > this->maxVel) ? this->maxVel : this->currentVel;
+	if (this->rigidBody.position.x > Renderer::WIDTH
+		|| this->rigidBody.position.x < 0
+		|| this->rigidBody.position.y > Renderer::HEIGHT
+		|| this->rigidBody.position.y < 0)
+	{
+		DeleteObject(logicManager, this->handle.index);
+	}
+}
 
-	this->mesh.origin = this->mesh.origin + (this->movementVector * dTime);
+void Bullet::OnCollision(const GameObject * const collidedObj, LogicManager * const logicManager)
+{
+	if (collidedObj->handle.type == GameObjectTypes::ASTEROID)
+	{
+		DeleteObject(logicManager, collidedObj->handle.index);
+		DeleteObject(logicManager, this->handle.index);
+	}
 }
