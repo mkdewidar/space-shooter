@@ -58,7 +58,6 @@ void Player::Update(double dTime, LogicManager* const logicManager)
 		weaponShot = false;
 		timeSinceLastShot = 0;
 	}
-	this->rigidBody.collisionMesh = this->mesh;
 }
 
 void Player::OnCollision(const GameObject* const collidedObj, LogicManager* const logicManager)

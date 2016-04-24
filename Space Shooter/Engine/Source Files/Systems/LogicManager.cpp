@@ -47,6 +47,11 @@ void LogicManager::Update(double dTime)
 			0 : object->rigidBody.position.y;
 		object->rigidBody.position.y = (object->rigidBody.position.y < 0) ?
 			Renderer::HEIGHT : object->rigidBody.position.y;
+
+		// updates the rigid body collision mesh to be same as mesh
+		// required cause if mesh rotates the collision mesh should 
+		// be rotated to be the same
+		object->rigidBody.collisionMesh = object->mesh;
 	}
 }
 

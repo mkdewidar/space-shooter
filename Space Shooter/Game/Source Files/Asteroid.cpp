@@ -23,7 +23,6 @@ Asteroid::~Asteroid()
 void Asteroid::Update(double dTime, LogicManager* const logicManager)
 {
 	this->mesh.RotateVertices(this->rotateAmount * dTime);
-	this->rigidBody.collisionMesh = this->mesh;
 }
 
 void Asteroid::OnCollision(const GameObject * const collidedObj, LogicManager* const logicManager)

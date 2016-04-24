@@ -32,23 +32,6 @@ void Physics::Update(double dTime)
 			{
 				continue;
 			}
-			//for every game object in the vector
-			//	check whether the objects are within range using circle collision
-			//	if the object is within range start SAT
-			//		get all edges for the object
-			//		find normals for all of the edges of the object
-			//		for every normal
-			//			for all of the vertices for one objects
-			//				find the projection vector onto the normal
-			//				find magnitude of projection vector
-			//				if magnitude is greater than current max
-			//					it is the new max
-			//				if magnitude is lower than current min
-			//					it is the new min
-			//do above loop for the second object
-			//if the max for this object is less than the min for other object
-			//OR the min for this object is less than the max for other
-			//*/
 
 			// point in circle check
 			// to check if objects are close enough to be worth the collision check
