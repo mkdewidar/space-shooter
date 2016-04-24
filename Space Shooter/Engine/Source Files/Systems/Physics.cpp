@@ -57,6 +57,8 @@ void Physics::Update(double dTime)
 				+ pow((otherObjIndex->rigidBody.position.y - object->rigidBody.position.y), 2))
 				<= pow(object->rigidBody.proximity, 2))
 			{
+				bool collision = true;
+
 				// these references are used to shorten the statements below
 				// and to avoid rewriting the whole statements
 				Mesh2D& objMesh = object->rigidBody.collisionMesh;
@@ -81,27 +83,25 @@ void Physics::Update(double dTime)
 				for (Vector2D normal : edgeNormals)
 				{
 					// the max scalar value representing the projection for object
-					double objProjMax = 0;
+					double objProjMax = -9999999;
 					// the min scalar value representing the projection for object
 					double objProjMin = 9999999;
 					// the max scalar value representing the projection for other object
-					double otherObjProjMax = 0;
+					double otherObjProjMax = -9999999;
 					// the min scalar value representing the projection
 					// in terms of the normal for the other object
 					double otherObjProjMin = 9999999;
 
 					for (Vector2D vertex : objMesh.GetCoordsInSpace(object->rigidBody.position))
 					{
-						Vector2D projectedVector = normal.GetProjection(vertex);
-						double projMag = projectedVector.GetMagnitude();
+						double projMag = normal.GetProjectionScalar(vertex);
 
 						objProjMax = (projMag > objProjMax) ? projMag : objProjMax;
 						objProjMin = (projMag < objProjMin) ? projMag : objProjMin;
 					}
 					for (Vector2D vertex : otherObjMesh.GetCoordsInSpace(otherObjIndex->rigidBody.position))
 					{
-						Vector2D projectedVector = normal.GetProjection(vertex);
-						double projMag = projectedVector.GetMagnitude();
+						double projMag = normal.GetProjectionScalar(vertex);
 
 						otherObjProjMax = (projMag > otherObjProjMax) ? projMag : otherObjProjMax;
 						otherObjProjMin = (projMag < otherObjProjMin) ? projMag : otherObjProjMin;
@@ -111,14 +111,18 @@ void Physics::Update(double dTime)
 
 					// check for no overlap between the projections, if there isn't
 					// there is no collision between the objects
-					if (!((objProjMax >= otherObjProjMin) && (otherObjProjMax >= objProjMin)))
+					bool overlap = ((objProjMax >= otherObjProjMin) && (otherObjProjMax >= objProjMin));
+					if (!overlap)
 					{
+						collision = false;
 						break;
 					}
 				}
-
-				CollisionMsg colMsg = CollisionMsg(object->handle, otherObjIndex->handle);
-				this->messageBus->PostMessage(&colMsg);
+				if (collision)
+				{
+					CollisionMsg colMsg = CollisionMsg(object->handle, otherObjIndex->handle);
+					this->messageBus->PostMessage(&colMsg);
+				}
 			}
 		}
 	}

@@ -44,10 +44,10 @@ public:
 	Projects the vector provided on the current vector
 	@param vToProject the vector that is to be projected
 		on the current vector
-	@return vector representing the projection onto 
+	@return the scalar value representing the projection onto 
 		the current vector
 	*/
-	Vector2D GetProjection(Vector2D vToProject);
+	double GetProjectionScalar(Vector2D vToProject);
 
 	/*
 	Converts the current Vector2D to an SDL_Point

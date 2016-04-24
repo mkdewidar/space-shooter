@@ -9,7 +9,7 @@ class GameState :
 	public System
 {
 public:
-	GameState();
+	GameState(SlotMap<GameObject*>& gameObjs);
 	~GameState();
 
 	/*
@@ -24,5 +24,7 @@ public:
 
 private:
 	bool quit;
+
+	const SlotMap<GameObject*>& gameObjects;
 };
 

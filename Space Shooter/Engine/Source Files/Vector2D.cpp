@@ -60,15 +60,15 @@ Vector2D Vector2D::operator*(double scalar)
 	return Vector2D((this->x * scalar), (this->y * scalar));
 }
 
-Vector2D Vector2D::GetProjection(Vector2D vToProject)
+double Vector2D::GetProjectionScalar(Vector2D vToProject)
 {
 	// projection is kinda like shadow of one vector onto another
 	// in this case the shadow of vToProject onto this vector
 
-	Vector2D projection;
+	double projection;
 
 	Vector2D thisUnitVector = this->GetUnitVector();
-	projection = thisUnitVector * thisUnitVector.GetDotProduct(vToProject);
+	projection = thisUnitVector.GetDotProduct(vToProject);
 	
 	return projection;
 }

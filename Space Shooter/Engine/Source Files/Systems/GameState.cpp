@@ -2,7 +2,8 @@
 
 
 
-GameState::GameState()
+GameState::GameState(SlotMap<GameObject*>& gameObjs)
+	: gameObjects(gameObjs)
 {
 	this->quit = false;
 }
@@ -18,6 +19,7 @@ bool GameState::IsItOver()
 
 void GameState::Update(double dTime)
 {
+	
 }
 
 void GameState::HandleMessage(Msg * postedMsg)
@@ -27,10 +29,6 @@ void GameState::HandleMessage(Msg * postedMsg)
 	case MsgTypes::ENDGAME:
 	{
 		this->quit = true;
-		break;
-	}
-	default:
-	{
 		break;
 	}
 	}

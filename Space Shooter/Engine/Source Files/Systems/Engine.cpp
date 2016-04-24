@@ -3,6 +3,7 @@
 
 Engine::Engine()
 	: gameObjects(),
+	gameState(this->gameObjects),
 	objectManager(this->gameObjects),
 	logicManager(this->gameObjects),
 	physics(this->gameObjects),
@@ -49,16 +50,7 @@ void Engine::RunScene()
 		double deltaTime = this->time.GetDeltaTime() / 1000.0;
 		this->time.ResetTime();
 
-		if (this->gameObjects.Size() < 1)
-		{
-			size_t noOfAsteroids = rand() % 10 + 1;
-			for (size_t counter = 0; counter < noOfAsteroids; counter++)
-			{
-				CreateObjectMsg createAsteroidMsg = CreateObjectMsg(GameObjectTypes::ASTEROID);
-				this->messageBus.PostMessage(&createAsteroidMsg);
-			}
-		}
-
+		this->gameState.Update(deltaTime);
 		this->objectManager.Update(deltaTime);
 		this->logicManager.Update(deltaTime);
 		this->physics.Update(deltaTime);

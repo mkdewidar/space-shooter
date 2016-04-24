@@ -15,6 +15,8 @@ Player::Player(Vector2D * vertices, int noOfVertices, Vector2D* meshVertices, in
 	this->shootDelay = 0.25f;
 	this->timeSinceLastShot = 0;
 	this->weaponShot = false;
+
+	this->handle.type = GameObjectTypes::PLAYER;
 }
 
 Player::~Player()
@@ -56,13 +58,13 @@ void Player::Update(double dTime, LogicManager* const logicManager)
 		weaponShot = false;
 		timeSinceLastShot = 0;
 	}
-
+	this->rigidBody.collisionMesh = this->mesh;
 }
 
 void Player::OnCollision(const GameObject* const collidedObj, LogicManager* const logicManager)
 {
 	if (collidedObj->handle.type == GameObjectTypes::ASTEROID)
 	{
-		DeleteObject(logicManager, collidedObj->handle.index);
+		DeleteObject(logicManager, this->handle.index);
 	}
 }

@@ -4,6 +4,7 @@ Bullet::Bullet(Vector2D* vertices, int noOfVertices,
 	Vector2D* meshVertices, int noOfmeshVerts)
 	: GameObject(vertices, noOfVertices, meshVertices, noOfmeshVerts)
 {
+	this->handle.type = GameObjectTypes::BULLET;
 }
 
 Bullet::~Bullet()
