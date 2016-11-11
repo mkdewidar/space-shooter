@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "../GameObject.h"
+#include "GameObject.h"
 
 using std::vector;
 
@@ -70,7 +70,7 @@ private:
 };
 
 template<class T>
-SlotMap<T>::SlotMap(int size = 5)
+SlotMap<T>::SlotMap(int size)
 	: chunkSize(size)
 {
 	this->chunks.push_back(new T[this->chunkSize]());

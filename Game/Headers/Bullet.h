@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../Engine/Header Files/GameObject.h"
-#include "../../Engine/Header Files/Systems/Renderer.h"
-#include "../../Engine/Header Files/Systems/LogicManager.h"
+#include "GameObject.h"
+#include "Renderer.h"
+#include "LogicManager.h"
 
 class Bullet
 	: public GameObject

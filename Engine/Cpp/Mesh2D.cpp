@@ -1,5 +1,5 @@
-#include "../Header Files/Mesh2D.h"
-#include "../Header Files/Vector2D.h"
+#include "Mesh2D.h"
+#include "Vector2D.h"
 
 
 Mesh2D::Mesh2D(Vector2D* vertices, int noOfVertices)

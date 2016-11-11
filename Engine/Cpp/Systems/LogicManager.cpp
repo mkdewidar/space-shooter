@@ -1,5 +1,5 @@
-#include "../../Header Files/Systems/LogicManager.h"
-#include "../../Header Files/Systems/Renderer.h"
+#include "LogicManager.h"
+#include "Renderer.h"
 
 LogicManager::LogicManager(SlotMap<GameObject*>& gameObjs)
 	: gameObjects(gameObjs)

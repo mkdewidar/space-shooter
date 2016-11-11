@@ -1,4 +1,4 @@
-#include "..\Header Files\Bullet.h"
+#include "Bullet.h"
 
 Bullet::Bullet(Vector2D* vertices, int noOfVertices,
 	Vector2D* meshVertices, int noOfmeshVerts)

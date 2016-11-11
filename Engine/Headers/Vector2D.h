@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SDL.h>
+#include "SDL.h"
 
 /*
 Represents a set of 2D coordinates in a 2D world

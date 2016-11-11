@@ -20,4 +20,57 @@ For more information about the implementation details for the specific features 
 
 ### Build
 
-The project is built using CMake to generate the makefiles and make to actually build it. This version can't be built due to linker/compiler errors as a result of the way the project was originally setup to include each others files. They will be addressed in the next commit.
+The project is built using CMake to generate the makefiles and make to actually build it. The `MakeFile` has been included for convenience. The binary has also been provided in the `bin` folder; it's called `Shooter`.
+
+You will need basic knowledge of how to navigate a terminal to be able to keep up.
+
+#### Running the bin
+
+To run the provided binary you must make sure you have SDL2 installed, you can do this using apt (if you have it):
+
+```sh
+sudo apt-get install libsdl2-2.0-0
+```
+
+To then run the game run the following commands, provided you are at the root directory:
+
+```sh
+cd bin
+./Shooter
+```
+
+#### Build using the MakeFile
+
+To build it using make (if you really want to) make sure you have SDL2 dev installed, if you don't, it should be available through your favourite package manager. For distros with apt installed:
+
+```sh
+sudo apt-get install libsdl2-dev
+```
+
+Then move into the root directory for the project and run:
+
+```sh
+cd bin
+make
+```
+
+Modifying the code doesn't require re-running CMake, only Make. If the file structure changes or you add/remove files then you will need to run CMake again.
+
+#### Generating MakeFile using CMake
+
+As mentioned above you will only need to do this if the file structure/directories change, otherwise the MakeFile is still valid.
+
+First ensure you have CMake installed, if you don't you can install using apt:
+
+```sh
+sudo apt-get install cmake
+```
+
+Then from the root directory of the project enter the following:
+
+```sh
+cd bin
+cmake ../
+```
+
+This will use the CMakeLists.txt file to generate the MakeFile in the bin directory, you can then follow the instructions above to build the project using Make.

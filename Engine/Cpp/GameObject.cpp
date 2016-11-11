@@ -1,6 +1,5 @@
-#include "../Header Files/GameObject.h"
-#include "../Header Files/Systems/LogicManager.h"
-#include <Windows.h>
+#include "GameObject.h"
+#include "LogicManager.h"
 
 
 

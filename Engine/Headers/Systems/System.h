@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "../GameObject.h"
+#include "GameObject.h"
 #include "MessageBus.h"
 #include "SlotMap.h"
 

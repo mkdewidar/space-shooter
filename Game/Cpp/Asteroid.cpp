@@ -1,4 +1,4 @@
-#include "../Header Files/Asteroid.h"
+#include "Asteroid.h"
 
 
 

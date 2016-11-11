@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../../../Game/Header Files/GameObjectTypes.h"
-#include "../GameObject.h"
+#include "GameObjectTypes.h"
+#include "GameObject.h"
 
 class System;
 

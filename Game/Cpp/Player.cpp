@@ -1,6 +1,6 @@
-#include "../Header Files/Player.h"
-#include "../Header Files/Bullet.h"
-#include "../../Engine/Header Files/Systems/LogicManager.h"
+#include "Player.h"
+#include "Bullet.h"
+#include "LogicManager.h"
 
 
 Player::Player(Vector2D * vertices, int noOfVertices, Vector2D* meshVertices, int noOfmeshVerts)

@@ -1,4 +1,4 @@
-#include "../../Header Files/Systems/Engine.h"
+#include "Engine.h"
 
 
 Engine::Engine()
@@ -24,7 +24,7 @@ Engine::Engine()
 
 	CreateObjectMsg createPlayerMsg = CreateObjectMsg(GameObjectTypes::PLAYER);
 	this->messageBus.PostMessage(&createPlayerMsg);
-	size_t noOfAsteroids = rand() % 10 + 1;
+	size_t noOfAsteroids = 10/*rand() % 10 + 1*/;
 	for (size_t counter = 0; counter < noOfAsteroids; counter++)
 	{
 		CreateObjectMsg createAsteroidMsg = CreateObjectMsg(GameObjectTypes::ASTEROID);

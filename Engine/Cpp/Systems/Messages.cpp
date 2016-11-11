@@ -1,6 +1,4 @@
-#include "../../Header Files/Systems/Messages.h"
-
-
+#include "Messages.h"
 
 Msg::Msg()
 {

@@ -1,10 +1,10 @@
-#include "../../Header Files/Systems/ObjectManager.h"
+#include "ObjectManager.h"
 
-#include "../../Header Files/Mesh2D.h"
-#include "../../Header Files/Vector2D.h"
-#include "../../../Game/Header Files/Player.h"
-#include "../../../Game/Header Files/Asteroid.h"
-#include "../../../Game/Header Files/Bullet.h"
+#include "Mesh2D.h"
+#include "Vector2D.h"
+#include "Player.h"
+#include "Asteroid.h"
+#include "Bullet.h"
 
 #define PLAYERPOSITIONS { 300, 500 }
 #define PLAYERSHAPES { { 0, 20 },{ 10, -10 },{ -10, -10 } }
@@ -12,7 +12,7 @@
 #define ASTEROIDPOSITIONS { 800, 500 }
 #define ASTEROIDSHAPE { { 0, 45 },{ 40, 30 },{ 40, -30 },{ 0, -45 },{ -40, -30 },{ -40, 30 } }
 
-#define BULLETSHAPE { {0, 0 }, {0, 10 } }
+#define BULLETSHAPE { { 0, 3 }, { 0, -3 }, { -3, 0 }/*{ 0, 15 },{ 10, 5 },{ 10, -5 },{ 0, -15 },{ -10, -5 },{ -10, 5 } */}
 
 
 ObjectManager::ObjectManager(SlotMap<GameObject*>& gameObjs)
@@ -67,8 +67,8 @@ void ObjectManager::HandleMessage(Msg* postedMsg)
 		}
 		case GameObjectTypes::BULLET:
 		{
-			Vector2D bulletShape[1] = { Vector2D(0, 0) };
-			Bullet* newBullet = new Bullet(bulletShape, 1, bulletShape, 1);
+			Vector2D bulletShape[3] = BULLETSHAPE;
+			Bullet* newBullet = new Bullet(bulletShape, 3, bulletShape, 3);
 			newBullet->handle.index = this->gameObjects.AddItem(newBullet);
 			createMsg->createdObject = newBullet;
 

@@ -1,4 +1,4 @@
-#include "../../Header Files/Systems/GameState.h"
+#include "GameState.h"
 
 
 
@@ -19,7 +19,15 @@ bool GameState::IsItOver()
 
 void GameState::Update(double dTime)
 {
-	
+	if (this->gameObjects.Size() <= 1)
+	{
+		size_t noOfAsteroids = rand() % 10 + 1;
+		for (size_t counter = 0; counter < noOfAsteroids; counter++)
+		{
+			CreateObjectMsg createAsteroidMsg = CreateObjectMsg(GameObjectTypes::ASTEROID);
+			this->messageBus->PostMessage(&createAsteroidMsg);
+		}
+	}
 }
 
 void GameState::HandleMessage(Msg * postedMsg)

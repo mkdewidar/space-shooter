@@ -2,7 +2,7 @@
 
 #include "Mesh2D.h"
 #include "RigidBody2D.h"
-#include "../../Game/Header Files/GameObjectTypes.h"
+#include "GameObjectTypes.h"
 
 /*
 The base class for any game object that can exist

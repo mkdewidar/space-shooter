@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../Engine/Header Files/GameObject.h"
+#include "GameObject.h"
 #include "Asteroid.h"
 
 

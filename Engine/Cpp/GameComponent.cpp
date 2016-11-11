@@ -1,4 +1,4 @@
-#include "../Header Files/GameComponent.h"
+#include "GameComponent.h"
 
 
 
