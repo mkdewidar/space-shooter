@@ -2,7 +2,7 @@
 
 This project was made for the term 2 (year 1) C++ programming module at Nottingham Trent University. It is a vector graphics based space shooter similar to Asteroids. The game engine was created using the cross platform library [SDL 2.0.4](libsdl.org). The game engine was made to be as separate as possible from the actual game objects. This has been achieved to some extent.
 
-The game controls similar to Asteroids with the `W` and `S` changing the speed of the ship and the `A` and `D` rotating it about it's centre. The ship shoots with the `space`.
+The game controls similar to Asteroids with the `W` and `S` changing the speed of the ship and the `A` and `D` rotating it about it's centre. The ship shoots with the `space`. You can quit the game at any time using the `ESC` key.
 
 ### Main Features:
 
