@@ -20,8 +20,4 @@ For more information about the implementation details for the specific features 
 
 ### Build
 
-The project requires [Microsoft Visual Studio](www.visualstudio.com/) to build. The `.sln` file provided is set up to link to the SDL2 library provided in the Space Shooter folder. However the link is not relative and therefore needs to be changed for the project to build correctly.
-
-From the bar at the top navigate to `project > Space Shooter properties > Configuration Properties`. To change the include path go to `C/C++ > General > Additional Include Directories` then click on the option and change the directory such that it points to new path of the files in the SDL2 folder. To change the paths for the linker navigate to `Linker > Input > Additional Dependencies` then select the option and change the directory to the new path.
-
-You can debug (and consequently run) the program by hitting `F5` then confirming the build.
+The project is built using CMake to generate the makefiles and make to actually build it. This version can't be built due to linker/compiler errors as a result of the way the project was originally setup to include each others files. They will be addressed in the next commit.
